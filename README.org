@@ -1,0 +1,6 @@
+#+TITLE: README
+
+This is the ~gh-pages~ branch. This branch is constructed with GitHub actions.
+
+Note: in this particular case, there are actions in the ~xmlcalabash3~ repository
+that publish to this repository.
