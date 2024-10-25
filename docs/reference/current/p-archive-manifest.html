@@ -1,0 +1,151 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>p:archive-manifest</title><link href="./css/pygments.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"/><meta name="dc.modified" content="2024-10-25T19:22:42Z"/><meta name="generator" content="DocBook xslTNG version 2.4.0 / ec29f88d / SAXON HE 12.5"/><link href="./css/docbook.css" rel="stylesheet" media="screen"/><link href="img/icon.png" rel="shortcut icon"/><link href="./css/xmlcalabash.css" rel="stylesheet"/><link href="./css/xproc.css" rel="stylesheet"/><link rel="prev" href="p-add-xml-base.html"/><link rel="next" href="p-archive.html"/><link rel="up" href="standard-steps.html"/><link rel="home" href="index.html"/><script src="./js/copy-verbatim.js" defer="defer"></script><script src="./js/chunk-nav.js" defer="defer"></script></head><body class="component refentry"><nav class="top"><div><a href="index.html">Home</a> <a href="standard-steps.html">Up</a> <a href="p-archive.html">Next</a> <a href="p-add-xml-base.html">Prev</a></div></nav><main><section id="p-archive-manifest" db-chunk="p-archive-manifest.html" db-id="d111e302" class="component refentry"><div id="p-archive-manifest_refnamediv1" class="refnamediv"><header><h2>Name</h2></header><p><span class="refname">p:archive-manifest</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">The standard p:archive-manifest step</span><span class="refpurpose-punc">.</span></span></p></div><section id="p-archive-manifest_refsynopsisdiv1" class="refsynopsisdiv"><header><h2>Synopsis</h2></header>
+
+<p>The <code>p:archive-manifest</code> creates an XML manifest file describing the contents of
+    the archive appearing on its <span class="port">source</span> port.</p>
+
+
+<div class="declare-step"><table class="tableaux"><thead><tr><th class="port">Input port</th><th class="check">Primary</th><th class="check">Sequence</th><th>Content types</th></tr></thead><tbody><tr><td class="primary">source</td><td class="check">✔ </td><td class="check"> </td><td>any </td></tr></tbody></table><table class="tableaux"><thead><tr><th class="port">Output port</th><th class="check">Primary</th><th class="check">Sequence</th><th>Content types</th></tr></thead><tbody><tr><td class="primary">result</td><td class="check">✔ </td><td class="check"> </td><td>application/xml </td></tr></tbody></table><table class="tableaux"><thead><tr><th class="optname">Option name</th><th>Type</th><th>Default value</th></tr></thead><tbody><tr><td class="optname">format</td><td>xs:QName?</td><td>()</td></tr><tr><td class="optname">override-content-types</td><td>array(array(xs:string))?</td><td>()</td></tr><tr><td class="optname">parameters</td><td>map(xs:QName, item()*)?</td><td>()</td></tr><tr><td class="optname">relative-to</td><td>xs:anyURI?</td><td>()</td></tr></tbody></table><details><summary>Declaration</summary><div class="pre-wrap programlisting-wrap highlight" db-startinglinenumber="1" db-numberoflines="14"><pre class="language-xml long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln"> 1 <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:declare-step</span> <span class="na">xmlns:p=</span><span class="s">"http://www.w3.org/ns/xproc"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="2"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:input</span> <span class="na">port=</span><span class="s">"source"</span></code></span></span>
+<span class="line" db-line="3"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>            <span class="na">primary=</span><span class="s">"true"</span></code></span></span>
+<span class="line" db-line="4"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>            <span class="na">content-types=</span><span class="s">"any"</span></code></span></span>
+<span class="line" db-line="5"><span class="ln"> 5 <span class="nsep">|</span></span><span class="ld"><code>            <span class="na">sequence=</span><span class="s">"false"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="6"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:output</span> <span class="na">port=</span><span class="s">"result"</span></code></span></span>
+<span class="line" db-line="7"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">primary=</span><span class="s">"true"</span></code></span></span>
+<span class="line" db-line="8"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">content-types=</span><span class="s">"application/xml"</span></code></span></span>
+<span class="line" db-line="9"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">sequence=</span><span class="s">"false"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="10"><span class="ln">10 <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"format"</span> <span class="na">as=</span><span class="s">"xs:QName?"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="11"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"parameters"</span> <span class="na">as=</span><span class="s">"map(xs:QName, item()*)?"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="12"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"relative-to"</span> <span class="na">as=</span><span class="s">"xs:anyURI?"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="13"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"override-content-types"</span> <span class="na">as=</span><span class="s">"array(array(xs:string))?"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="14"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;/p:declare-step&gt;</span></code></span></span>
+</pre></div></details></div>
+<details><summary>Errors</summary><table class="tableaux error-list"><thead><tr><th class="code">Code</th><th>Description</th></tr></thead><tbody><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0079"><code>err:XC0079</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if the map
+        <code class="option">parameters</code> contains an entry whose key is defined by the implementation and
+      whose value is not valid for that key.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0081"><code>err:XC0081</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if the format of the
+          archive does not match the format as specified in the <code class="option">format</code>
+          option.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0085"><code>err:XC0085</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if the format of the
+      archive cannot be understood, determined and/or processed.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0120"><code>err:XC0120</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if the <code class="option">relative-to</code>
+      option is not present and the document on the <span class="port">source</span> port does not have a base
+      URI.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0146"><code>err:XC0146</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if the specified value
+        for the <code class="option">override-content-types</code> option is not an array of arrays, where the
+        inner arrays have exactly two members of type <code>xs:string</code>.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0147"><code>err:XC0147</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic
+              error</a></span> if the specified value is not a valid XPath regular
+            expression.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.D0064"><code>err:XD0064</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic
+        error</a></span> if the base URI is not both absolute and valid according to <a href="bib01.html#rfc3986" class="xref xref-bibliomixed"><span class="label"><span class="abbrev">RFC 3986</span></span></a>.</td></tr><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.D0079"><code>err:XD0079</code></a></td><td>It is a <span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if a supplied 
+            content-type is not a valid media type of the form 
+            “<code class="literal"><em class="replaceable">type</em>/<em class="replaceable">subtype</em>+<em class="replaceable">ext</em></code>” 
+            or “<code class="literal"><em class="replaceable">type</em>/<em class="replaceable">subtype</em></code>”.</td></tr></tbody></table></details><details><summary>Implementation defined features</summary><ul><li>It is
+            <span class="glossterm"><a href="gloss01.html#glossary_ge2">implementation-defined</a></span> what other formats are supported.</li><li>It is <span class="glossterm"><a href="gloss01.html#glossary_ge2">implementation-defined</a></span> how the step determines
+          the archive's format.</li><li>The semantics of the keys and the allowed values for these
+      keys are <span class="glossterm"><a href="gloss01.html#glossary_ge2">implementation-defined</a></span>.</li><li>Additional information provided for entries in <code class="tag tag-element">p:archive-manifest</code> is
+        <span class="glossterm"><a href="gloss01.html#glossary_ge2">implementation-defined</a></span>.</li></ul></details></section><section id="p-archive-manifest_refsection1" class="refsection"><header><h2>Description</h2></header>
+      
+      <p>Compression is supported by the third party
+Apache Commons Compress™ library.</p>
+   </section><section id="p-archive-manifest_refsection2" class="refsection"><header><h2>Supported formats</h2></header>
+     
+
+<p>The following formats are supported using the Apache Commons
+Compress™ library version 1.27.1.</p>
+
+<div id="p-archive-manifest_refsection2_informaltable1" class="informalobject informaltable pgwide"><table><thead><tr><th>Archive format</th><th>Content type</th><th>Common file extensions</th></tr></thead><tbody><tr><td>7z</td><td><code class="literal">application/x-7z-compressed</code></td><td><code class="extension filename">.7z</code></td></tr><tr><td>AR</td><td><code class="literal">application/x-archive</code></td><td><code class="extension filename">.a</code>,
+       <code class="extension filename">.lib</code>,
+    <code class="extension filename">.ar</code></td></tr><tr><td>ARJ</td><td><em>None</em></td><td><code class="extension filename">.arj</code></td></tr><tr><td>Jar</td><td><code class="literal">application/java-archive</code></td><td><code class="extension filename">.jar</code></td></tr><tr><td>Tar</td><td><code class="literal">application/x-tar</code></td><td><code class="extension filename">.tar</code></td></tr><tr><td>Zip</td><td><code class="literal">application/zip</code></td><td><code class="extension filename">.zip</code></td></tr></tbody></table></div>
+
+<section id="p-archive-manifest_refsection2_refsection1" class="refsection"><header><h3>7z Archives</h3></header>
+
+
+<p>Entries for 7z archives have the following format:</p>
+
+<div id="d1469e0" class="element-syntax-table"><table><tbody><tr><td class="code first">&lt;c:entry</td><td class="desc"></td></tr><tr><td class="code">  <strong>name</strong> = <var>string</var></td><td class="desc">The entry name.</td></tr><tr><td class="code">  <strong>href</strong> = <var>anyURI</var></td><td class="desc">The entry URI.</td></tr><tr><td class="code">  <strong>content-type</strong> = <var>string</var></td><td class="desc">The content-type.</td></tr><tr><td class="code">  comment? = <var>string</var></td><td class="desc">A comment associated with the entry.</td></tr><tr><td class="code">  method? = <var>string</var></td><td class="desc">The storage method.</td></tr><tr><td class="code">  level? = <var>string</var></td><td class="desc">The compression level.</td></tr><tr><td class="code">  cx:mode? = <var>integer</var></td><td class="desc">The Unix mode bits.</td></tr><tr><td class="code">  cx:mode-string? = <var>string</var></td><td class="desc">The Unix mode as a string.</td></tr><tr><td class="code">  cx:crc? = <var>integer</var></td><td class="desc">The entry CRC value.</td></tr><tr><td class="code">  cx:file-creation-time? = <var>dateTime</var></td><td class="desc">The file creation time.</td></tr><tr><td class="code">  cx:last-access-time? = <var>dateTime</var></td><td class="desc">The file last access time.</td></tr><tr><td class="code">  cx:windows-attributes? = <var>integer</var></td><td class="desc">The Windows attributes</td></tr><tr><td class="code">  cx:anti-item? = <var>boolean</var></td><td class="desc">Is this an “anti-item”?</td></tr><tr><td class="code">  <strong>cx:size</strong> = <var>nonNegativeInteger</var></td><td class="desc">The size of the entry when expanded.</td></tr><tr><td class="code last"> /&gt;</td><td class="desc"></td></tr></tbody></table></div>
+
+<p>The possible compression methods are
+“<code class="literal">none</code>” (no compression),
+“<code class="literal">lzma</code>”,
+“<code class="literal">lzma2</code>”,
+“<code class="literal">deflate</code>”,
+“<code class="literal">deflate64</code>”,
+“<code class="literal">bzip2</code>”, or
+“<code class="literal">unknown</code>” (if the method was not recognized).</p>
+
+<div class="admonition note"><div><div class="icon">ⓘ</div><div class="body"><header><div class="title">Note</div></header><div><p>The 7z format calls the compression method that does no compression “copy”.
+It’s renamed to “none” here for consistency with the XProc archive format.</p></div></div></div></div>
+</section>
+
+<section id="p-archive-manifest_refsection2_refsection2" class="refsection"><header><h3>AR Archives</h3></header>
+
+
+<p>Entries for AR archives have the following format:</p>
+
+<div id="d1508e0" class="element-syntax-table"><table><tbody><tr><td class="code first">&lt;c:entry</td><td class="desc"></td></tr><tr><td class="code">  <strong>name</strong> = <var>string</var></td><td class="desc">The entry name.</td></tr><tr><td class="code">  <strong>href</strong> = <var>anyURI</var></td><td class="desc">The entry URI.</td></tr><tr><td class="code">  <strong>content-type</strong> = <var>string</var></td><td class="desc">The content-type.</td></tr><tr><td class="code">  comment? = <var>string</var></td><td class="desc">A comment associated with the entry.</td></tr><tr><td class="code">  method? = <var>string</var></td><td class="desc">The storage method.</td></tr><tr><td class="code">  level? = <var>string</var></td><td class="desc">The compression level.</td></tr><tr><td class="code">  cx:mode? = <var>integer</var></td><td class="desc">The Unix mode bits.</td></tr><tr><td class="code">  cx:mode-string? = <var>string</var></td><td class="desc">The Unix mode as a string.</td></tr><tr><td class="code">  <strong>cx:group-id</strong> = <var>integer</var></td><td class="desc">The group id.</td></tr><tr><td class="code">  cx:last-modified? = <var>dateTime</var></td><td class="desc">The last modification time.</td></tr><tr><td class="code">  <strong>cx:size</strong> = <var>nonNegativeInteger</var></td><td class="desc">The size of the entry when expanded.</td></tr><tr><td class="code last"> /&gt;</td><td class="desc"></td></tr></tbody></table></div>
+
+</section>
+
+<section id="p-archive-manifest_refsection2_refsection3" class="refsection"><header><h3>ARJ Archives</h3></header>
+
+
+<p>Entries for ARJ archives have the following format:</p>
+
+<div id="d1530e0" class="element-syntax-table"><table><tbody><tr><td class="code first">&lt;c:entry</td><td class="desc"></td></tr><tr><td class="code">  <strong>name</strong> = <var>string</var></td><td class="desc">The entry name.</td></tr><tr><td class="code">  <strong>href</strong> = <var>anyURI</var></td><td class="desc">The entry URI.</td></tr><tr><td class="code">  <strong>content-type</strong> = <var>string</var></td><td class="desc">The content-type.</td></tr><tr><td class="code">  comment? = <var>string</var></td><td class="desc">A comment associated with the entry.</td></tr><tr><td class="code">  method? = <var>string</var></td><td class="desc">The storage method.</td></tr><tr><td class="code">  level? = <var>string</var></td><td class="desc">The compression level.</td></tr><tr><td class="code">  cx:mode? = <var>integer</var></td><td class="desc">The Unix mode bits.</td></tr><tr><td class="code">  cx:mode-string? = <var>string</var></td><td class="desc">The Unix mode as a string.</td></tr><tr><td class="code">  <strong>cx:windows-attributes</strong> = <var>integer</var></td><td class="desc">The Windows attributes</td></tr><tr><td class="code">  cx:last-modified? = <var>dateTime</var></td><td class="desc">The last modification time.</td></tr><tr><td class="code">  cx:host-os? = <var>string</var></td><td class="desc">Operating system where the archive was created.</td></tr><tr><td class="code">  <strong>cx:size</strong> = <var>nonNegativeInteger</var></td><td class="desc">The size of the entry when expanded.</td></tr><tr><td class="code last"> /&gt;</td><td class="desc"></td></tr></tbody></table></div>
+
+<p>The host operating system values are
+“<code class="literal">Amiga</code>”,
+“<code class="literal">Apple IIGS</code>”,
+“<code class="literal">Atari ST</code>”,
+“<code class="literal">DOS</code>”,
+“<code class="literal">MacOS</code>”,
+“<code class="literal">Next</code>”,
+“<code class="literal">OS/2</code>”,
+“<code class="literal">PRIMOS</code>”,
+“<code class="literal">Unix</code>”,
+“<code class="literal">VAX/VMS</code>”,
+“<code class="literal">Windows</code>”, or
+“<code class="literal">Windows95</code>”.</p>
+</section>
+
+<section id="p-archive-manifest_refsection2_refsection4" class="refsection"><header><h3>Tar Archives</h3></header>
+
+
+<p>Entries for tar archives have the following format:</p>
+
+<div id="d1574e0" class="element-syntax-table"><table><tbody><tr><td class="code first">&lt;c:entry</td><td class="desc"></td></tr><tr><td class="code">  <strong>name</strong> = <var>string</var></td><td class="desc">The entry name.</td></tr><tr><td class="code">  <strong>href</strong> = <var>anyURI</var></td><td class="desc">The entry URI.</td></tr><tr><td class="code">  <strong>content-type</strong> = <var>string</var></td><td class="desc">The content-type.</td></tr><tr><td class="code">  comment? = <var>string</var></td><td class="desc">A comment associated with the entry.</td></tr><tr><td class="code">  method? = <var>string</var></td><td class="desc">The storage method.</td></tr><tr><td class="code">  level? = <var>string</var></td><td class="desc">The compression level.</td></tr><tr><td class="code">  <strong>cx:mode</strong> = <var>integer</var></td><td class="desc">The Unix mode bits.</td></tr><tr><td class="code">  <strong>cx:mode-string</strong> = <var>string</var></td><td class="desc">The Unix mode as a string.</td></tr><tr><td class="code">  cx:dev-major? = <var>integer</var></td><td class="desc">The device major number.</td></tr><tr><td class="code">  cx:dev-minor? = <var>integer</var></td><td class="desc">The device minor number.</td></tr><tr><td class="code">  <strong>cx:group-id</strong> = <var>integer</var></td><td class="desc">The group id.</td></tr><tr><td class="code">  <strong>cx:group-name</strong> = <var>string</var></td><td class="desc">The group name.</td></tr><tr><td class="code">  <strong>cx:user-id</strong> = <var>integer</var></td><td class="desc">The user id.</td></tr><tr><td class="code">  <strong>cx:user-name</strong> = <var>string</var></td><td class="desc">The user name.</td></tr><tr><td class="code">  cx:link-flag? = <var>integer</var></td><td class="desc">The link flag.</td></tr><tr><td class="code">  cx:link-name? = <var>string</var></td><td class="desc">The link name.</td></tr><tr><td class="code">  cx:file-creation-time? = <var>dateTime</var></td><td class="desc">The file creation time.</td></tr><tr><td class="code">  cx:last-access-time? = <var>dateTime</var></td><td class="desc">The file last access time.</td></tr><tr><td class="code">  cx:last-modified? = <var>dateTime</var></td><td class="desc">The last modification time.</td></tr><tr><td class="code">  cx:status-change-time? = <var>dateTime</var></td><td class="desc">The file last status change time.</td></tr><tr><td class="code">  <strong>cx:size</strong> = <var>nonNegativeInteger</var></td><td class="desc">The size of the entry when expanded.</td></tr><tr><td class="code last"> /&gt;</td><td class="desc"></td></tr></tbody></table></div>
+
+<p>The <code class="tag tag-attribute">cx:dev-major</code> and <code class="tag tag-attribute">cx:dev-minor</code>
+attributes are omited if they have a value of zero. 
+The <code class="tag tag-attribute">cx:link-flag</code> is only present if it isn’t 0 (or ‘0’, 0x30).
+The <code class="tag tag-attribute">cx:link-name</code> is only present if it isn’t null or blank.
+</p>
+
+<p>An entry with a <code class="tag tag-attribute">cx:link-flag</code> of ‘5’ is assumed to be a directory
+and is omited from the manifest.</p>
+
+<p>Sparse tar entries are not supported.</p>
+</section>
+
+<section id="p-archive-manifest_refsection2_refsection5" class="refsection"><header><h3>Zip (and Jar) Archives</h3></header>
+
+
+<p>Jar archive files are just Zip archives with a different filename extension.
+Entries have the following format:
+</p>
+
+<div id="d1604e0" class="element-syntax-table"><table><tbody><tr><td class="code first">&lt;c:entry</td><td class="desc"></td></tr><tr><td class="code">  <strong>name</strong> = <var>string</var></td><td class="desc">The entry name.</td></tr><tr><td class="code">  <strong>href</strong> = <var>anyURI</var></td><td class="desc">The entry URI.</td></tr><tr><td class="code">  <strong>content-type</strong> = <var>string</var></td><td class="desc">The content-type.</td></tr><tr><td class="code">  comment? = <var>string</var></td><td class="desc">A comment associated with the entry.</td></tr><tr><td class="code">  method? = <var>string</var></td><td class="desc">The storage method.</td></tr><tr><td class="code">  level? = <var>string</var></td><td class="desc">The compression level.</td></tr><tr><td class="code">  cx:mode? = <var>integer</var></td><td class="desc">The Unix mode bits.</td></tr><tr><td class="code">  cx:mode-string? = <var>string</var></td><td class="desc">The Unix mode as a string.</td></tr><tr><td class="code">  cx:file-creation-time? = <var>dateTime</var></td><td class="desc">The file creation time.</td></tr><tr><td class="code">  cx:last-access-time? = <var>dateTime</var></td><td class="desc">The file last access time.</td></tr><tr><td class="code">  cx:last-modified? = <var>dateTime</var></td><td class="desc">The last modification time.</td></tr><tr><td class="code">  <strong>cx:size</strong> = <var>nonNegativeInteger</var></td><td class="desc">The size of the entry when expanded.</td></tr><tr><td class="code last"> /&gt;</td><td class="desc"></td></tr></tbody></table></div>
+
+<p>The <code class="tag tag-attribute">cx:mode</code> and <code class="tag tag-attribute">cx:mode-string</code>
+attributes are omited if the mode value is zero.
+The possible compression methods are
+“<code class="literal">none</code>” (no compression),
+“<code class="literal">deflated</code>”, or
+“<code class="literal">unknown</code>” (if the method was not recognized).</p>
+</section>
+
+<section id="p-archive-manifest_refsection2_refsection6" class="refsection"><header><h3>Notes</h3></header>
+
+<ol class="orderedlist" type="1"><li><p>Support for the 7z format requires the
+<code class="package">org.tukaani:xz:1.10</code> package on the classpath.</p></li><li><p>The <code class="tag tag-attribute">cx:mode-string</code> attribute contains a string representation
+of the traditional Unix mode bits. For example, <code class="literal">-rw-r-----</code> for a file that is
+readable and writable by the owner, readable by members of the same group, and not accessible by
+others.</p><p>Generally, the <code class="tag tag-attribute">cx:mode</code> and <code class="tag tag-attribute">cx:mode-string</code>
+attributes will either both be present or neither will be present.</p></li></ol>
+</section>
+   </section></section></main><nav class="bottom"><table><tr><td class="previous"><a href="p-add-xml-base.html">Prev</a></td><td class="up"><a href="standard-steps.html">Up</a></td><td class="next"><a href="p-archive.html">Next</a></td></tr><tr><td class="previous">p:add-xml-base</td><td class="up"><a href="index.html">Home</a></td><td class="next">p:archive</td></tr></table></nav></body></html>

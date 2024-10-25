@@ -1,0 +1,82 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>p:hash</title><link href="./css/pygments.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"/><meta name="dc.modified" content="2024-10-25T19:22:42Z"/><meta name="generator" content="DocBook xslTNG version 2.4.0 / ec29f88d / SAXON HE 12.5"/><link href="./css/docbook.css" rel="stylesheet" media="screen"/><link href="img/icon.png" rel="shortcut icon"/><link href="./css/xmlcalabash.css" rel="stylesheet"/><link href="./css/xproc.css" rel="stylesheet"/><link rel="prev" href="p-filter.html"/><link rel="next" href="p-http-request.html"/><link rel="up" href="standard-steps.html"/><link rel="home" href="index.html"/><script src="./js/copy-verbatim.js" defer="defer"></script><script src="./js/chunk-nav.js" defer="defer"></script></head><body class="component refentry"><nav class="top"><div><a href="index.html">Home</a> <a href="standard-steps.html">Up</a> <a href="p-http-request.html">Next</a> <a href="p-filter.html">Prev</a></div></nav><main><section id="p-hash" db-chunk="p-hash.html" db-id="d111e2580" class="component refentry"><div id="p-hash_refnamediv1" class="refnamediv"><header><h2>Name</h2></header><p><span class="refname">p:hash</span><span class="refpurpose"><span class="refpurpose-sep"> — </span><span class="refpurpose-text">The standard p:hash step</span><span class="refpurpose-punc">.</span></span></p></div><section id="p-hash_refsynopsisdiv1" class="refsynopsisdiv"><header><h2>Synopsis</h2></header>
+
+<p>The <code class="tag tag-element">p:hash</code> step generates a hash, or digital “fingerprint”,
+for some value and injects it into the <span class="port">source</span> document.</p>
+
+
+<div class="declare-step"><table class="tableaux"><thead><tr><th class="port">Input port</th><th class="check">Primary</th><th class="check">Sequence</th><th>Content types</th></tr></thead><tbody><tr><td class="primary">source</td><td class="check">✔ </td><td class="check"> </td><td>xml html </td></tr></tbody></table><table class="tableaux"><thead><tr><th class="port">Output port</th><th class="check">Primary</th><th class="check">Sequence</th><th>Content types</th></tr></thead><tbody><tr><td class="primary">result</td><td class="check">✔ </td><td class="check"> </td><td>text xml html </td></tr></tbody></table><table class="tableaux"><thead><tr><th class="optname">Option name</th><th>Type</th><th>Default value</th><th class="check">Required</th></tr></thead><tbody><tr><td class="required">algorithm</td><td>xs:QName</td><td> </td><td class="check">✔ </td></tr><tr><td class="required">value</td><td>xs:string</td><td> </td><td class="check">✔ </td></tr><tr><td class="optname">match</td><td>XSLTSelectionPattern</td><td>'/*/node()'</td><td class="check"> </td></tr><tr><td class="optname">parameters</td><td>map(xs:QName,item()*)?</td><td>()</td><td class="check"> </td></tr><tr><td class="optname">version</td><td>xs:string?</td><td>()</td><td class="check"> </td></tr></tbody></table><details><summary>Declaration</summary><div class="pre-wrap programlisting-wrap highlight" db-startinglinenumber="1" db-numberoflines="13"><pre class="language-xml long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln"> 1 <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:declare-step</span> <span class="na">xmlns:p=</span><span class="s">"http://www.w3.org/ns/xproc"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="2"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:input</span> <span class="na">port=</span><span class="s">"source"</span> <span class="na">primary=</span><span class="s">"true"</span> <span class="na">content-types=</span><span class="s">"xml html"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="3"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:output</span> <span class="na">port=</span><span class="s">"result"</span> <span class="na">content-types=</span><span class="s">"text xml html"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="4"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"parameters"</span> <span class="na">as=</span><span class="s">"map(xs:QName,item()*)?"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="5"><span class="ln"> 5 <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">required=</span><span class="s">"true"</span> <span class="na">as=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="6"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"algorithm"</span> <span class="na">required=</span><span class="s">"true"</span> <span class="na">as=</span><span class="s">"xs:QName"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="7"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">xmlns:e=</span><span class="s">"http://www.w3.org/1999/XSL/Spec/ElementSyntax"</span></code></span></span>
+<span class="line" db-line="8"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">name=</span><span class="s">"match"</span></code></span></span>
+<span class="line" db-line="9"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">as=</span><span class="s">"xs:string"</span></code></span></span>
+<span class="line" db-line="10"><span class="ln">10 <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">select=</span><span class="s">"'/*/node()'"</span></code></span></span>
+<span class="line" db-line="11"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>             <span class="na">e:type=</span><span class="s">"XSLTSelectionPattern"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="12"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>   <span class="nt">&lt;p:option</span> <span class="na">name=</span><span class="s">"version"</span> <span class="na">as=</span><span class="s">"xs:string?"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="13"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;/p:declare-step&gt;</span></code></span></span>
+</pre></div></details></div>
+<details><summary>Errors</summary><table class="tableaux error-list"><thead><tr><th class="code">Code</th><th>Description</th></tr></thead><tbody><tr><td class="code"><a class="exlink" href="https://spec.xproc.org/master/head/steps/#err.C0036"><code>err:XC0036</code></a></td><td>It is a
+<span class="glossterm"><a href="gloss01.html#glossary_ge1">dynamic error</a></span> if the requested hash algorithm is not
+one that the processor understands or if the value or parameters are
+not appropriate for that algorithm.</td></tr></tbody></table></details><details><summary>Implementation defined features</summary><ul><li>It is
+<span class="glossterm"><a href="gloss01.html#glossary_ge2">implementation-defined</a></span> what other algorithms are
+supported.</li></ul></details></section><section id="p-hash_refsection1" class="refsection"><header><h2>Description</h2></header>
+      
+      <p>TBD.</p>
+   </section><section id="p-hash_refsection2" class="refsection"><header><h2>Supported algorithms</h2></header>
+     
+     <p>The <code>crc</code>, <code>md</code>, and <code>sha</code> algorithms are supported
+     as well as <code>cx:hmac</code> and <code>cx:blake3</code>.
+     </p>
+
+     <section id="p-hash_refsection2_refsection1" class="refsection"><header><h3>crc</h3></header>
+       
+       <p>Generates a CRC-32 checksum.
+       The default, and only accepted, <code class="option">version</code> for the <code>crc</code> algorithm
+       is “32”.</p>
+     </section>
+
+     <section id="p-hash_refsection2_refsection2" class="refsection"><header><h3>md</h3></header>
+       
+       <p>Generates an MD2 or MD5 digest.
+       The default <code class="option">version</code> for the <code>md</code> algorithm is “5”.
+       XML Calabash defers implementation to the JVM <code class="classname">MessageDigest</code> class.</p>
+       <p>The MD2 digest algorithm is defined in <a href="bib01.html#rfc1319" class="xref xref-bibliomixed"><span class="label"><span class="abbrev">RFC 1319</span></span></a>.
+       The MD5 digest algorithm is defined in <a href="bib01.html#rfc1321" class="xref xref-bibliomixed"><span class="label"><span class="abbrev">RFC 1321</span></span></a>.</p>
+     </section>
+
+     <section id="p-hash_refsection2_refsection3" class="refsection"><header><h3>sha</h3></header>
+       
+       <p>Generates a SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, or SHA-512/256
+       digest.
+       The default <code class="option">version</code> for the <code>sha</code> algorithm is “1”.
+       XML Calabash defers implementation to the JVM <code class="classname">MessageDigest</code> class.</p>
+       <p>The digest algorithms are defined in <a href="bib01.html#fips180-4" class="xref xref-bibliomixed"><span class="label"><span class="abbrev">FIPS 180-4</span></span></a>.</p>
+     </section>
+
+     <section id="p-hash_refsection2_refsection4" class="refsection"><header><h3>cx:hmac</h3></header>
+       
+       <p>Generates an HMAC signature with the HMAC SHA1 algorithm. The <code class="option">version</code>
+       option is ignored. The algorithm requires an access key which must be provided in
+       the <code>access-key</code> property of the <code class="option">parameters</code> option.</p>
+     </section>
+
+     <section id="p-hash_refsection2_refsection5" class="refsection"><header><h3>cx:blake3</h3></header>
+       
+       <p>Generates a Blake3 digest. The <code class="option">version</code>
+       option is ignored. XML Calabash defers implementation to the
+       <a href="https://commons.apache.org/proper/commons-codec/" class="link">Apache Commons Codec</a>
+       project.</p>
+       <ul class="itemizedlist"><li><p>If no <code class="option">parameters</code> are provided, a Blake3 hash is generated.</p></li><li><p>If a <code>key</code> property is provided in the <code class="option">parameters</code> option,
+           a Blake3 keyed hash is generated.</p><p>If a <code>key</code> is provided, no other properties may be provided.</p></li><li><p>If a <code>shared-secret</code>, <code>sender-id</code>, and <code>recipient-id</code>
+           are all provided in the <code class="option">parameters</code> option, a Blake3 key derivation
+           digest is generated.</p><p>If any of <code>shared-secret</code>, <code>sender-id</code>, or
+           <code>recipient-id</code> are provided, they must <em>all</em> be provided.
+           No other properties may be provided.</p></li></ul>
+       <p>No other algorithms are supported at this time.</p>
+     </section>
+
+   </section></section></main><nav class="bottom"><table><tr><td class="previous"><a href="p-filter.html">Prev</a></td><td class="up"><a href="standard-steps.html">Up</a></td><td class="next"><a href="p-http-request.html">Next</a></td></tr><tr><td class="previous">p:filter</td><td class="up"><a href="index.html">Home</a></td><td class="next">p:http-request</td></tr></table></nav></body></html>
