@@ -1,0 +1,6 @@
+#+TITLE: README
+
+This repository provides build automation for docs.xmlcalabash.com.
+
+It’s probably not of great interest.
+
