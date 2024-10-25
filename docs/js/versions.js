@@ -15,7 +15,7 @@
     .then(response => {
       if (response.ok) {
         response.json().then(json => {
-          rver.innerHTML = `<a href="/userguide/${json.version}/">Version ${json.version}</a>`
+          rver.innerHTML = `<a href="/reference/${json.version}/">Version ${json.version}</a>`
         })
       }
     });
