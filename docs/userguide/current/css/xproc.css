@@ -1,3 +1,36 @@
+/* Manage tables before special kinds of tables */
+
+table {
+    width: 100%;
+    border: 1px solid var(--tableaux-border-color);
+}
+
+table thead {
+    background-color: var(--focused-color);
+}
+
+table thead tr td,
+table thead tr th,
+table tbody tr td,
+table tbody tr th {
+    border-bottom: 1px dotted var(--tableaux-border-color);
+    border-right: 1px dotted var(--tableaux-border-color);
+}
+
+nav table {
+    border: none;
+}
+
+nav table thead tr td,
+nav table thead tr th,
+nav table tbody tr td,
+nav table tbody tr th {
+    border-bottom: inherit;
+    border-right: inherit;
+}
+
+/* ============================================================ */
+
 div.declare-step table tbody tr td {
     font-size: 95%;
 }
@@ -179,12 +212,14 @@ table.tableaux.error-list tbody td.code code {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    border: none;
 }
 
 .element-syntax-table table tr td {
     padding: 0;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    border-right: none;
 }
 
 .element-syntax-table table tr td {
