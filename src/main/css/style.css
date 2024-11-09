@@ -59,9 +59,27 @@ a:visited {
 
 /* ============================================================ */
 
+.button {
+    border: 1px solid #aaaaaa;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    padding-top: 0.75em;
+    background-color: #dfdfdf;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 130%;
+}
+
+.button.incomplete {
+    font-size: 80%;
+}
+
+/* ============================================================ */
+
 .choice {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .choice div {
@@ -74,7 +92,19 @@ a:visited {
     padding: 0.5rem;
 }
 
+.choice button.incomplete {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
 .choice p {
-    margin-top: 0.5em;
+    margin-top: 1.5em;
     font-size: small;
+    margin-bottom: 0;
+}
+
+p.anno {
+    font-style: italic;
+    font-size: small;
+    margin-top: 0.25em;
 }
