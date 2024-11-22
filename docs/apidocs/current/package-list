@@ -42,13 +42,14 @@ $dokka.location:com.xmlcalabash.graph/GraphVisualization.SinkNode///PointingToDe
 $dokka.location:com.xmlcalabash.graph/GraphVisualization.SubpipelineNode///PointingToDeclaration/com/xmlcalabash/graph/GraphVisualization.SubpipelineNode.html
 $dokka.location:com.xmlcalabash.io/ContentTypeConverter.Companion///PointingToDeclaration/com/xmlcalabash/io/ContentTypeConverter.Companion.html
 $dokka.location:com.xmlcalabash.io/DocumentLoader.Companion///PointingToDeclaration/com/xmlcalabash/io/DocumentLoader.Companion.html
+$dokka.location:com.xmlcalabash.parsers.xpath31/XPathExpressionParser.Companion///PointingToDeclaration/com/xmlcalabash/parsers/xpath31/XPathExpressionParser.Companion.html
+$dokka.location:com.xmlcalabash.parsers.xpath31/XPathExpressionParser.FindRefs///PointingToDeclaration/com/xmlcalabash/parsers/xpath31/XPathExpressionParser.FindRefs.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.EventHandler///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.EventHandler.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.Nonterminal///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.Nonterminal.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.ParseException///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.ParseException.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.Symbol///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.Symbol.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.Terminal///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.Terminal.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.TopDownTreeBuilder///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.TopDownTreeBuilder.html
-$dokka.location:com.xmlcalabash.parsers/XPathExpressionParser.Companion///PointingToDeclaration/com/xmlcalabash/parsers/XPathExpressionParser.Companion.html
 $dokka.location:com.xmlcalabash.runtime.steps/CompoundStep.Companion///PointingToDeclaration/com/xmlcalabash/runtime/steps/CompoundStep.Companion.html
 $dokka.location:com.xmlcalabash.runtime.steps/RunStep.PassthroughReceiver///PointingToDeclaration/com/xmlcalabash/runtime/steps/RunStep.PassthroughReceiver.html
 $dokka.location:com.xmlcalabash.runtime/RuntimeExecutionContext.Companion///PointingToDeclaration/com/xmlcalabash/runtime/RuntimeExecutionContext.Companion.html
@@ -124,6 +125,7 @@ com.xmlcalabash.graph
 com.xmlcalabash.io
 com.xmlcalabash.namespace
 com.xmlcalabash.parsers
+com.xmlcalabash.parsers.xpath31
 com.xmlcalabash.parsers.xpl
 com.xmlcalabash.parsers.xpl.elements
 com.xmlcalabash.runtime
