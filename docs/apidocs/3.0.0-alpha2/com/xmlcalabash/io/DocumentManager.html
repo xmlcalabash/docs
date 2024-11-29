@@ -328,9 +328,9 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                         </tr>
                                         
                                         <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=../documents/XProcDocument.html>XProcDocument</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#cache(com.xmlcalabash.documents.XProcDocument)>cache</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#getCached(java.net.URI)>getCached</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a> href) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -338,7 +338,7 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                         <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#uncache(com.xmlcalabash.documents.XProcDocument)>uncache</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#cache(com.xmlcalabash.documents.XProcDocument)>cache</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -346,15 +346,15 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#clearCache()>clearCache</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#uncache(com.xmlcalabash.documents.XProcDocument)>uncache</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i8" class="altColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/org/xml/sax/InputSource.html>InputSource</a></code>
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#resolveEntity(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>resolveEntity</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> publicId, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> baseURI, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> systemId) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#clearCache()>clearCache</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -362,7 +362,7 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/org/xml/sax/InputSource.html>InputSource</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#resolveEntity(java.lang.String,java.lang.String)>resolveEntity</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> publicId, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> systemId) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#resolveEntity(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>resolveEntity</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> publicId, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> baseURI, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> systemId) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -370,12 +370,20 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                         <tr id="i10" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/org/xml/sax/InputSource.html>InputSource</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#getExternalSubset(java.lang.String,java.lang.String)>getExternalSubset</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> baseURI) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#resolveEntity(java.lang.String,java.lang.String)>resolveEntity</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> publicId, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> systemId) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i11" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/org/xml/sax/InputSource.html>InputSource</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=DocumentManager.html#getExternalSubset(java.lang.String,java.lang.String)>getExternalSubset</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> baseURI) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/javax/xml/transform/Source.html>Source</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=DocumentManager.html#resolve(net.sf.saxon.lib.ResourceRequest)>resolve</a>(ResourceRequest saxonRequest) </code>
@@ -383,7 +391,7 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i12" class="altColor">
+                                        <tr id="i13" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/javax/xml/transform/stream/StreamSource.html>StreamSource</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=DocumentManager.html#resolve(java.lang.String,java.lang.String,kotlin.Array)>resolve</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> moduleURI, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> baseURI, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html>Array</a>&lt;out <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; locations) </code>
@@ -556,6 +564,29 @@ public final class <span class="typeNameLabel"><a href=DocumentManager.html>Docu
                                     <li class="blockList">
                                         <h4>load</h4>
                                         <pre class="methodSignature"> final <a href=../documents/XProcDocument.html>XProcDocument</a> <a href=DocumentManager.html#load(java.net.URI,com.xmlcalabash.config.XProcStepConfiguration,com.xmlcalabash.documents.DocumentProperties,java.util.Map)>load</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a> href, <a href=../config/XProcStepConfiguration.html>XProcStepConfiguration</a> stepConfig, <a href=../documents/DocumentProperties.html>DocumentProperties</a> properties, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; parameters)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getCached(java.net.URI)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getCached</h4>
+                                        <pre class="methodSignature"> final <a href=../documents/XProcDocument.html>XProcDocument</a> <a href=DocumentManager.html#getCached(java.net.URI)>getCached</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a> href)</pre>
                                         <div class="block"></div>
 
                                         <dl>

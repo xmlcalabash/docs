@@ -265,6 +265,14 @@ public interface <span class="typeNameLabel"><a href=InstructionStaticContext.ht
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=StepConfiguration.html#addStaticBinding(net.sf.saxon.s9api.QName,net.sf.saxon.s9api.XdmValue)>addStaticBinding</a>(QName binding, XdmValue value) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=StepDeclaration.html>StepDeclaration</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=StepConfiguration.html#getInscopeStepNames()>getInscopeStepNames</a>() </code>
@@ -272,7 +280,7 @@ public interface <span class="typeNameLabel"><a href=InstructionStaticContext.ht
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
+                                        <tr id="i4" class="altColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=VariableBindingContainer.html>VariableBindingContainer</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=StepConfiguration.html#getInscopeVariables()>getInscopeVariables</a>() </code>
@@ -280,7 +288,15 @@ public interface <span class="typeNameLabel"><a href=InstructionStaticContext.ht
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i4" class="altColor">
+                                        <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=StepConfiguration.html#getStaticBindings()>getStaticBindings</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
                                             <td class="colFirst"><code>abstract <a href=PortBindingContainer.html>PortBindingContainer</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=StepConfiguration.html#getDrp()>getDrp</a>() </code>
@@ -288,7 +304,7 @@ public interface <span class="typeNameLabel"><a href=InstructionStaticContext.ht
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i5" class="rowColor">
+                                        <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=StepConfiguration.html#setDrp(com.xmlcalabash.datamodel.PortBindingContainer)>setDrp</a>(<a href=PortBindingContainer.html>PortBindingContainer</a> drp) </code>
@@ -392,6 +408,29 @@ public interface <span class="typeNameLabel"><a href=InstructionStaticContext.ht
                                     </li>
                                 </ul>
                                 
+                                <a id="addStaticBinding(net.sf.saxon.s9api.QName,net.sf.saxon.s9api.XdmValue)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>addStaticBinding</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=StepConfiguration.html#addStaticBinding(net.sf.saxon.s9api.QName,net.sf.saxon.s9api.XdmValue)>addStaticBinding</a>(QName binding, XdmValue value)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
                                 <a id="getInscopeStepNames()">
                                     <!--   -->
                                 </a>
@@ -424,6 +463,29 @@ public interface <span class="typeNameLabel"><a href=InstructionStaticContext.ht
                                     <li class="blockList">
                                         <h4>getInscopeVariables</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=VariableBindingContainer.html>VariableBindingContainer</a>&gt; <a href=StepConfiguration.html#getInscopeVariables()>getInscopeVariables</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getStaticBindings()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getStaticBindings</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; <a href=StepConfiguration.html#getStaticBindings()>getStaticBindings</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>

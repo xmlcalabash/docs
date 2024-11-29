@@ -65,6 +65,7 @@ $dokka.location:com.xmlcalabash.steps/ArchiveStep.ZipArchiver///PointingToDeclar
 $dokka.location:com.xmlcalabash.steps/CompareStep.CompareReporter///PointingToDeclaration/com/xmlcalabash/steps/CompareStep.CompareReporter.html
 $dokka.location:com.xmlcalabash.steps/CssFormatterStep.Companion///PointingToDeclaration/com/xmlcalabash/steps/CssFormatterStep.Companion.html
 $dokka.location:com.xmlcalabash.steps/UncompressStep.Companion///PointingToDeclaration/com/xmlcalabash/steps/UncompressStep.Companion.html
+$dokka.location:com.xmlcalabash.steps/XIncludeStep.XiResolver///PointingToDeclaration/com/xmlcalabash/steps/XIncludeStep.XiResolver.html
 $dokka.location:com.xmlcalabash.steps/XQueryStep.MyDestination///PointingToDeclaration/com/xmlcalabash/steps/XQueryStep.MyDestination.html
 $dokka.location:com.xmlcalabash.steps/XQueryStep.MyErrorListener///PointingToDeclaration/com/xmlcalabash/steps/XQueryStep.MyErrorListener.html
 $dokka.location:com.xmlcalabash.steps/XslFormatterStep.Companion///PointingToDeclaration/com/xmlcalabash/steps/XslFormatterStep.Companion.html
