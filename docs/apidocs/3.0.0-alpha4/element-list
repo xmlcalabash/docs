@@ -14,7 +14,9 @@ $dokka.location:com.xmlcalabash.datamodel/XProcAvtExpression.Companion///Pointin
 $dokka.location:com.xmlcalabash.datamodel/XProcConstantExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcConstantExpression.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/XProcErrorExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcErrorExpression.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/XProcExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcExpression.Companion.html
+$dokka.location:com.xmlcalabash.datamodel/XProcMatchExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcMatchExpression.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/XProcSelectExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcSelectExpression.Companion.html
+$dokka.location:com.xmlcalabash.datamodel/XProcShortcutExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcShortcutExpression.Companion.html
 $dokka.location:com.xmlcalabash.documents/XProcDocument.Companion///PointingToDeclaration/com/xmlcalabash/documents/XProcDocument.Companion.html
 $dokka.location:com.xmlcalabash.exceptions/DefaultErrorExplanation.ErrorExplanationTemplate///PointingToDeclaration/com/xmlcalabash/exceptions/DefaultErrorExplanation.ErrorExplanationTemplate.html
 $dokka.location:com.xmlcalabash.exceptions/XProcError.Companion///PointingToDeclaration/com/xmlcalabash/exceptions/XProcError.Companion.html

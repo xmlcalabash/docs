@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>XProcConstantExpression </title>
+    <title>XProcMatchExpression </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -89,7 +89,7 @@ var pathtoroot = "../../../";
 <main role="main">
     <div class="header">
         <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.xmlcalabash.datamodel</a></div>
-        <h2 title="Class XProcConstantExpression" class="title">Class XProcConstantExpression</h2>
+        <h2 title="Class XProcMatchExpression" class="title">Class XProcMatchExpression</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -114,7 +114,7 @@ var pathtoroot = "../../../";
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=XProcConstantExpression.html>XProcConstantExpression</a></span>
+public final class <span class="typeNameLabel"><a href=XProcMatchExpression.html>XProcMatchExpression</a></span>
 extends <a href=XProcExpression.html>XProcExpression</a>
                     </pre>
                     <div class="block"></div>
@@ -151,7 +151,7 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                         
                                         <tr class="altColor">
                                             <td class="colFirst"><code>public class</code></td>
-                                            <th class="colSecond" scope="row"><code><a href="XProcConstantExpression.Companion.html">XProcConstantExpression.Companion</a></span></code>
+                                            <th class="colSecond" scope="row"><code><a href="XProcMatchExpression.Companion.html">XProcMatchExpression.Companion</a></span></code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -180,80 +180,86 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                         </tr>
                                         
                                         <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#match>match</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=../parsers/XPathExpressionDetails.html>XPathExpressionDetails</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#details>details</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html>Object</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#contextItem>contextItem</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../documents/XProcDocument.html>XProcDocument</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#defaultCollection>defaultCollection</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;QName&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#variableRefs>variableRefs</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Set.html>Set</a>&lt;<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt;&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#functionRefs>functionRefs</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#contextRef>contextRef</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#alwaysDynamic>alwaysDynamic</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final XdmValue</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#staticValue>staticValue</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=StepConfiguration.html>StepConfiguration</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#stepConfig>stepConfig</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final SequenceType</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#asType>asType</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#collection>collection</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;XdmAtomicValue&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcShortcutExpression.html#values>values</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
-                                            <td class="colFirst"><code>public final static <a href=XProcConstantExpression.Companion.html>XProcConstantExpression.Companion</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcConstantExpression.html#Companion>Companion</a></code></th>
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public final static <a href=XProcMatchExpression.Companion.html>XProcMatchExpression.Companion</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#Companion>Companion</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -331,33 +337,41 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=XProcExpression.html>XProcExpression</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcConstantExpression.html#cast(net.sf.saxon.s9api.SequenceType,java.util.List)>cast</a>(SequenceType asType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;XdmAtomicValue&gt; values) </code>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#getMatch()>getMatch</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>Function0&lt;XdmValue&gt;</code>
+                                            <td class="colFirst"><code><a href=XProcExpression.html>XProcExpression</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcConstantExpression.html#xevaluate()>xevaluate</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#cast(net.sf.saxon.s9api.SequenceType,java.util.List)>cast</a>(SequenceType asType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;XdmAtomicValue&gt; values) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>XdmValue</code>
+                                            <td class="colFirst"><code>Function0&lt;XdmValue&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcConstantExpression.html#evaluate()>evaluate</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#xevaluate()>xevaluate</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i3" class="rowColor">
+                                            <td class="colFirst"><code>XdmValue</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#evaluate()>evaluate</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i4" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcConstantExpression.html#toString()>toString</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=XProcMatchExpression.html#toString()>toString</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -412,6 +426,29 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                             </a>
                                 <h3>Method Detail</h3>
                                 
+                                <a id="getMatch()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getMatch</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> <a href=XProcMatchExpression.html#getMatch()>getMatch</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
                                 <a id="cast(net.sf.saxon.s9api.SequenceType,java.util.List)">
                                     <!--   -->
                                 </a>
@@ -420,7 +457,7 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                           >
                                     <li class="blockList">
                                         <h4>cast</h4>
-                                        <pre class="methodSignature"> <a href=XProcExpression.html>XProcExpression</a> <a href=XProcConstantExpression.html#cast(net.sf.saxon.s9api.SequenceType,java.util.List)>cast</a>(SequenceType asType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;XdmAtomicValue&gt; values)</pre>
+                                        <pre class="methodSignature"> <a href=XProcExpression.html>XProcExpression</a> <a href=XProcMatchExpression.html#cast(net.sf.saxon.s9api.SequenceType,java.util.List)>cast</a>(SequenceType asType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;XdmAtomicValue&gt; values)</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -443,7 +480,7 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                           >
                                     <li class="blockList">
                                         <h4>xevaluate</h4>
-                                        <pre class="methodSignature"> Function0&lt;XdmValue&gt; <a href=XProcConstantExpression.html#xevaluate()>xevaluate</a>()</pre>
+                                        <pre class="methodSignature"> Function0&lt;XdmValue&gt; <a href=XProcMatchExpression.html#xevaluate()>xevaluate</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -466,7 +503,7 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                           >
                                     <li class="blockList">
                                         <h4>evaluate</h4>
-                                        <pre class="methodSignature"> XdmValue <a href=XProcConstantExpression.html#evaluate()>evaluate</a>()</pre>
+                                        <pre class="methodSignature"> XdmValue <a href=XProcMatchExpression.html#evaluate()>evaluate</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -489,7 +526,7 @@ extends <a href=XProcExpression.html>XProcExpression</a>
                                           >
                                     <li class="blockList">
                                         <h4>toString</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> <a href=XProcConstantExpression.html#toString()>toString</a>()</pre>
+                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> <a href=XProcMatchExpression.html#toString()>toString</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
