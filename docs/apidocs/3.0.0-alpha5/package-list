@@ -28,7 +28,7 @@ $dokka.location:com.xmlcalabash.functions/ErrorFunction.ErrorImpl///PointingToDe
 $dokka.location:com.xmlcalabash.functions/FunctionLibraryImportableFunction.FuncLibImportableImpl///PointingToDeclaration/com/xmlcalabash/functions/FunctionLibraryImportableFunction.FuncLibImportableImpl.html
 $dokka.location:com.xmlcalabash.functions/IterationPositionFunction.IterationPositionImpl///PointingToDeclaration/com/xmlcalabash/functions/IterationPositionFunction.IterationPositionImpl.html
 $dokka.location:com.xmlcalabash.functions/IterationSizeFunction.IterationPositionImpl///PointingToDeclaration/com/xmlcalabash/functions/IterationSizeFunction.IterationPositionImpl.html
-$dokka.location:com.xmlcalabash.functions/LookupUri.lookupUriImpl///PointingToDeclaration/com/xmlcalabash/functions/LookupUri.lookupUriImpl.html
+$dokka.location:com.xmlcalabash.functions/LookupUriFunction.lookupUriImpl///PointingToDeclaration/com/xmlcalabash/functions/LookupUriFunction.lookupUriImpl.html
 $dokka.location:com.xmlcalabash.functions/StepAvailableFunction.StepAvailableImpl///PointingToDeclaration/com/xmlcalabash/functions/StepAvailableFunction.StepAvailableImpl.html
 $dokka.location:com.xmlcalabash.functions/SystemPropertyFunction.SystemPropertyImpl///PointingToDeclaration/com/xmlcalabash/functions/SystemPropertyFunction.SystemPropertyImpl.html
 $dokka.location:com.xmlcalabash.functions/UrifyFunction.UrifyImpl///PointingToDeclaration/com/xmlcalabash/functions/UrifyFunction.UrifyImpl.html
