@@ -1,9 +1,11 @@
 $dokka.format:javadoc-v1
 $dokka.linkExtension:html
+$dokka.location:com.xmlcalabash.config/CommonEnvironment.Companion///PointingToDeclaration/com/xmlcalabash/config/CommonEnvironment.Companion.html
 $dokka.location:com.xmlcalabash.config/ConfigurationLoader.Companion///PointingToDeclaration/com/xmlcalabash/config/ConfigurationLoader.Companion.html
 $dokka.location:com.xmlcalabash.config/SaxonConfiguration.Companion///PointingToDeclaration/com/xmlcalabash/config/SaxonConfiguration.Companion.html
 $dokka.location:com.xmlcalabash.config/XmlCalabash.Companion///PointingToDeclaration/com/xmlcalabash/config/XmlCalabash.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/ImportResolver.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/ImportResolver.Companion.html
+$dokka.location:com.xmlcalabash.datamodel/InstructionConfigurationImpl.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/InstructionConfigurationImpl.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/Location.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/Location.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/MediaType.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/MediaType.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/PipelineBuilder.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/PipelineBuilder.Companion.html
@@ -54,7 +56,6 @@ $dokka.location:com.xmlcalabash.parsers/XPath31.Terminal///PointingToDeclaration
 $dokka.location:com.xmlcalabash.parsers/XPath31.TopDownTreeBuilder///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.TopDownTreeBuilder.html
 $dokka.location:com.xmlcalabash.runtime.steps/CompoundStep.Companion///PointingToDeclaration/com/xmlcalabash/runtime/steps/CompoundStep.Companion.html
 $dokka.location:com.xmlcalabash.runtime.steps/RunStep.PassthroughReceiver///PointingToDeclaration/com/xmlcalabash/runtime/steps/RunStep.PassthroughReceiver.html
-$dokka.location:com.xmlcalabash.runtime/RuntimeExecutionContext.Companion///PointingToDeclaration/com/xmlcalabash/runtime/RuntimeExecutionContext.Companion.html
 $dokka.location:com.xmlcalabash.runtime/XProcPipeline.ReceiverProxy///PointingToDeclaration/com/xmlcalabash/runtime/XProcPipeline.ReceiverProxy.html
 $dokka.location:com.xmlcalabash.runtime/XProcRuntime.Companion///PointingToDeclaration/com/xmlcalabash/runtime/XProcRuntime.Companion.html
 $dokka.location:com.xmlcalabash.spi/AtomicStepServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/AtomicStepServiceProvider.Companion.html
