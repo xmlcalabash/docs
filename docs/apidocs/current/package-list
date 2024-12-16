@@ -58,7 +58,6 @@ $dokka.location:com.xmlcalabash.parsers/XPath31.TopDownTreeBuilder///PointingToD
 $dokka.location:com.xmlcalabash.runtime.steps/CompoundStep.Companion///PointingToDeclaration/com/xmlcalabash/runtime/steps/CompoundStep.Companion.html
 $dokka.location:com.xmlcalabash.runtime.steps/RunStep.PassthroughReceiver///PointingToDeclaration/com/xmlcalabash/runtime/steps/RunStep.PassthroughReceiver.html
 $dokka.location:com.xmlcalabash.runtime/XProcPipeline.ReceiverProxy///PointingToDeclaration/com/xmlcalabash/runtime/XProcPipeline.ReceiverProxy.html
-$dokka.location:com.xmlcalabash.runtime/XProcRuntime.Companion///PointingToDeclaration/com/xmlcalabash/runtime/XProcRuntime.Companion.html
 $dokka.location:com.xmlcalabash.spi/AtomicStepServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/AtomicStepServiceProvider.Companion.html
 $dokka.location:com.xmlcalabash.spi/DocumentResolverServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/DocumentResolverServiceProvider.Companion.html
 $dokka.location:com.xmlcalabash.spi/PagedMediaServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/PagedMediaServiceProvider.Companion.html
