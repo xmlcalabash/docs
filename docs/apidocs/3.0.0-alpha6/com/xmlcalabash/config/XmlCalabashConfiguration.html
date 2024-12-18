@@ -251,6 +251,24 @@ public abstract class <span class="typeNameLabel"><a href=XmlCalabashConfigurati
                                         </tr>
                                         
                                         <tr class="rowColor">
+                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../spi/PagedMediaManager.html>PagedMediaManager</a>&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#pagedMediaManagers>pagedMediaManagers</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#pagedMediaXslProcessors>pagedMediaXslProcessors</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#pagedMediaCssProcessors>pagedMediaCssProcessors</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private  <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#threadPoolSize>threadPoolSize</a></code></th>
                                             <td class="colLast"></td>
@@ -544,9 +562,9 @@ public abstract class <span class="typeNameLabel"><a href=XmlCalabashConfigurati
                                         </tr>
                                         
                                         <tr id="i26" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../spi/PagedMediaManager.html>PagedMediaManager</a>&gt;</code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#getThreadPoolSize()>getThreadPoolSize</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#getPagedMediaManagers()>getPagedMediaManagers</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -554,12 +572,60 @@ public abstract class <span class="typeNameLabel"><a href=XmlCalabashConfigurati
                                         <tr id="i27" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#setThreadPoolSize(java.lang.Integer)>setThreadPoolSize</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> threadPoolSize) </code>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#setPagedMediaManagers(java.util.List)>setPagedMediaManagers</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../spi/PagedMediaManager.html>PagedMediaManager</a>&gt; pagedMediaManagers) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i28" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#getPagedMediaXslProcessors()>getPagedMediaXslProcessors</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i29" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#setPagedMediaXslProcessors(java.util.List)>setPagedMediaXslProcessors</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt; pagedMediaXslProcessors) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i30" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#getPagedMediaCssProcessors()>getPagedMediaCssProcessors</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i31" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#setPagedMediaCssProcessors(java.util.List)>setPagedMediaCssProcessors</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt; pagedMediaCssProcessors) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i32" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#getThreadPoolSize()>getThreadPoolSize</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i33" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#setThreadPoolSize(java.lang.Integer)>setThreadPoolSize</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> threadPoolSize) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i34" class="altColor">
                                             <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#saxonConfigurer(net.sf.saxon.Configuration)>saxonConfigurer</a>(Configuration saxon) </code>
@@ -567,7 +633,7 @@ public abstract class <span class="typeNameLabel"><a href=XmlCalabashConfigurati
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i29" class="rowColor">
+                                        <tr id="i35" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=XmlCalabashConfiguration.html#xmlCalabashConfigurer(com.xmlcalabash.config.XmlCalabash)>xmlCalabashConfigurer</a>(<a href=XmlCalabash.html>XmlCalabash</a> xmlCalabash) </code>
@@ -1213,6 +1279,144 @@ public abstract class <span class="typeNameLabel"><a href=XmlCalabashConfigurati
                                     <li class="blockList">
                                         <h4>setSendmail</h4>
                                         <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XmlCalabashConfiguration.html#setSendmail(java.util.Map)>setSendmail</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; sendmail)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getPagedMediaManagers()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getPagedMediaManagers</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../spi/PagedMediaManager.html>PagedMediaManager</a>&gt; <a href=XmlCalabashConfiguration.html#getPagedMediaManagers()>getPagedMediaManagers</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPagedMediaManagers(java.util.List)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPagedMediaManagers</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XmlCalabashConfiguration.html#setPagedMediaManagers(java.util.List)>setPagedMediaManagers</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../spi/PagedMediaManager.html>PagedMediaManager</a>&gt; pagedMediaManagers)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getPagedMediaXslProcessors()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getPagedMediaXslProcessors</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt; <a href=XmlCalabashConfiguration.html#getPagedMediaXslProcessors()>getPagedMediaXslProcessors</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPagedMediaXslProcessors(java.util.List)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPagedMediaXslProcessors</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XmlCalabashConfiguration.html#setPagedMediaXslProcessors(java.util.List)>setPagedMediaXslProcessors</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt; pagedMediaXslProcessors)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getPagedMediaCssProcessors()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getPagedMediaCssProcessors</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt; <a href=XmlCalabashConfiguration.html#getPagedMediaCssProcessors()>getPagedMediaCssProcessors</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPagedMediaCssProcessors(java.util.List)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPagedMediaCssProcessors</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XmlCalabashConfiguration.html#setPagedMediaCssProcessors(java.util.List)>setPagedMediaCssProcessors</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/net/URI.html>URI</a>&gt; pagedMediaCssProcessors)</pre>
                                         <div class="block"></div>
 
                                         <dl>

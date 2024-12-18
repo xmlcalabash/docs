@@ -105,6 +105,7 @@ $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTableCaptionHandl
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTaskListItemCase///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyTaskListItemCase.html
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTaskListItemPlacement///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyTaskListItemPlacement.html
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTocOptionsListType///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyTocOptionsListType.html
+$dokka.location:com.xmlcalabash.util/NopPagedMediaProvider.Companion///PointingToDeclaration/com/xmlcalabash/util/NopPagedMediaProvider.Companion.html
 $dokka.location:com.xmlcalabash.util/S9Api.Companion///PointingToDeclaration/com/xmlcalabash/util/S9Api.Companion.html
 $dokka.location:com.xmlcalabash.util/SchematronImpl.Companion///PointingToDeclaration/com/xmlcalabash/util/SchematronImpl.Companion.html
 $dokka.location:com.xmlcalabash.util/SchematronImpl.UResourceResolver///PointingToDeclaration/com/xmlcalabash/util/SchematronImpl.UResourceResolver.html
