@@ -145,6 +145,7 @@ com.xmlcalabash.steps.file
 com.xmlcalabash.steps.internal
 com.xmlcalabash.steps.os
 com.xmlcalabash.steps.validation
+com.xmlcalabash.tracing
 com.xmlcalabash.util
 com.xmlcalabash.xslt
 
