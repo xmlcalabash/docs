@@ -176,32 +176,32 @@ extends <a href=AbstractAtomicStep.html>AbstractAtomicStep</a>
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private  <a href=../documents/XProcDocument.html>XProcDocument</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=StoreStep.html#document>document</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=../runtime/parameters/RuntimeStepParameters.html>RuntimeStepParameters</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=validation/ValidateWithXmlSchema.html#stepParams>stepParams</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=validation/ValidateWithXmlSchema.html#stepConfig>stepConfig</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=../runtime/api/Receiver.html>Receiver</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=validation/ValidateWithXmlSchema.html#receiver>receiver</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=../runtime/LazyValue.html>LazyValue</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=validation/ValidateWithXmlSchema.html#options>options</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../documents/XProcDocument.html>XProcDocument</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=validation/ValidateWithXmlSchema.html#queues>queues</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -291,30 +291,6 @@ extends <a href=AbstractAtomicStep.html>AbstractAtomicStep</a>
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>final <a href=../documents/XProcDocument.html>XProcDocument</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=StoreStep.html#getDocument()>getDocument</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=StoreStep.html#setDocument(com.xmlcalabash.documents.XProcDocument)>setDocument</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=StoreStep.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../documents/XProcDocument.html>XProcDocument</a> doc) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=StoreStep.html#run()>run</a>() </code>
@@ -322,7 +298,7 @@ extends <a href=AbstractAtomicStep.html>AbstractAtomicStep</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i4" class="altColor">
+                                        <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=StoreStep.html#toString()>toString</a>() </code>
@@ -339,7 +315,7 @@ extends <a href=AbstractAtomicStep.html>AbstractAtomicStep</a>
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;com.xmlcalabash.steps.AbstractAtomicStep</h3>
-                                            <code>booleanBinding, establishNamespaceBinding, establishNamespaceBinding, extensionAttributes, getNodeId, getOptions, getReceiver, getStepConfig, getStepParams, hasBinding, integerBinding, mediaTypeBinding, option, overrideContentTypes, qnameBinding, qnameMapBinding, reset, setup, stringBinding, stringMapBinding, teardown, uriBinding, valueBinding, xmlBinding</code></li>
+                                            <code>booleanBinding, establishNamespaceBinding, establishNamespaceBinding, extensionAttributes, getNodeId, getOptions, getQueues, getReceiver, getStepConfig, getStepParams, hasBinding, input, integerBinding, mediaTypeBinding, option, overrideContentTypes, qnameBinding, qnameMapBinding, reset, setup, stringBinding, stringMapBinding, teardown, uriBinding, valueBinding, xmlBinding</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -389,75 +365,6 @@ extends <a href=AbstractAtomicStep.html>AbstractAtomicStep</a>
                                 <!--   -->
                             </a>
                                 <h3>Method Detail</h3>
-                                
-                                <a id="getDocument()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>getDocument</h4>
-                                        <pre class="methodSignature"> final <a href=../documents/XProcDocument.html>XProcDocument</a> <a href=StoreStep.html#getDocument()>getDocument</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="setDocument(com.xmlcalabash.documents.XProcDocument)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>setDocument</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=StoreStep.html#setDocument(com.xmlcalabash.documents.XProcDocument)>setDocument</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> document)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="input(java.lang.String,com.xmlcalabash.documents.XProcDocument)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>input</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=StoreStep.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../documents/XProcDocument.html>XProcDocument</a> doc)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
                                 
                                 <a id="run()">
                                     <!--   -->

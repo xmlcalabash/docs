@@ -182,32 +182,32 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                         </tr>
                                         
                                         <tr class="rowColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../../documents/XProcDocument.html>XProcDocument</a>&gt;</code></td>
-                                            <th class="colSecond" scope="row"><code><a href=SplitterStep.html#queue>queue</a></code></th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=../../runtime/parameters/RuntimeStepParameters.html>RuntimeStepParameters</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=../validation/ValidateWithXmlSchema.html#stepParams>stepParams</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=../../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=../validation/ValidateWithXmlSchema.html#stepConfig>stepConfig</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=../../runtime/api/Receiver.html>Receiver</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=../validation/ValidateWithXmlSchema.html#receiver>receiver</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=../../runtime/LazyValue.html>LazyValue</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=../validation/ValidateWithXmlSchema.html#options>options</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../../documents/XProcDocument.html>XProcDocument</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=../validation/ValidateWithXmlSchema.html#queues>queues</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -305,14 +305,6 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../../documents/XProcDocument.html>XProcDocument</a>&gt;</code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=SplitterStep.html#getQueue()>getQueue</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=SplitterStep.html#setup(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.runtime.api.Receiver,com.xmlcalabash.runtime.parameters.RuntimeStepParameters)>setup</a>(<a href=../../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a> stepConfig, <a href=../../runtime/api/Receiver.html>Receiver</a> receiver, <a href=../../runtime/parameters/RuntimeStepParameters.html>RuntimeStepParameters</a> stepParams) </code>
@@ -320,15 +312,7 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=SplitterStep.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> doc) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i4" class="altColor">
+                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=SplitterStep.html#run()>run</a>() </code>
@@ -336,15 +320,7 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i5" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=SplitterStep.html#reset()>reset</a>() </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i6" class="altColor">
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=SplitterStep.html#toString()>toString</a>() </code>
@@ -361,7 +337,7 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;com.xmlcalabash.steps.AbstractAtomicStep</h3>
-                                            <code>booleanBinding, establishNamespaceBinding, establishNamespaceBinding, extensionAttributes, getNodeId, getOptions, getReceiver, getStepConfig, getStepParams, hasBinding, integerBinding, mediaTypeBinding, option, overrideContentTypes, qnameBinding, qnameMapBinding, stringBinding, stringMapBinding, teardown, uriBinding, valueBinding, xmlBinding</code></li>
+                                            <code>booleanBinding, establishNamespaceBinding, establishNamespaceBinding, extensionAttributes, getNodeId, getOptions, getQueues, getReceiver, getStepConfig, getStepParams, hasBinding, input, integerBinding, mediaTypeBinding, option, overrideContentTypes, qnameBinding, qnameMapBinding, reset, stringBinding, stringMapBinding, teardown, uriBinding, valueBinding, xmlBinding</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -435,29 +411,6 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                     </li>
                                 </ul>
                                 
-                                <a id="getQueue()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>getQueue</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=../../documents/XProcDocument.html>XProcDocument</a>&gt; <a href=SplitterStep.html#getQueue()>getQueue</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
                                 <a id="setup(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.runtime.api.Receiver,com.xmlcalabash.runtime.parameters.RuntimeStepParameters)">
                                     <!--   -->
                                 </a>
@@ -481,29 +434,6 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                     </li>
                                 </ul>
                                 
-                                <a id="input(java.lang.String,com.xmlcalabash.documents.XProcDocument)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>input</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=SplitterStep.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> doc)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
                                 <a id="run()">
                                     <!--   -->
                                 </a>
@@ -513,29 +443,6 @@ extends <a href=../AbstractAtomicStep.html>AbstractAtomicStep</a>
                                     <li class="blockList">
                                         <h4>run</h4>
                                         <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=SplitterStep.html#run()>run</a>()</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="reset()">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>reset</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=SplitterStep.html#reset()>reset</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
