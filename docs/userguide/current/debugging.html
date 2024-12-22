@@ -1,0 +1,213 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>Chapter 3. The interactive debugger</title><link href="./css/pygments.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"/><meta name="dc.modified" content="2024-12-22T18:11:21Z"/><meta name="generator" content="DocBook xslTNG version 2.5.0 / 855db8f2 / SAXON HE 12.5"/><link href="./css/docbook-toc.css" rel="stylesheet"/><link href="./css/docbook.css" rel="stylesheet" media="screen"/><link href="img/icon.png" rel="shortcut icon"/><link href="./css/xmlcalabash.css" rel="stylesheet"/><link href="./css/xproc.css" rel="stylesheet"/><link rel="prev" href="running.html"/><link rel="next" href="configuration.html"/><link rel="up" href="index.html"/><link rel="home" href="index.html"/><script src="./js/persistent-toc.js" defer="defer"></script><script src="./js/copy-verbatim.js" defer="defer"></script><script src="./js/chunk-nav.js" defer="defer"></script></head><body class="chapter component"><nav class="top"><div><a href="index.html">Home</a> <a href="index.html">Up</a> <a href="configuration.html">Next</a> <a href="running.html">Prev</a></div></nav><main><section id="debugging" db-chunk="debugging.html" db-id="d109e819" class="chapter component"><header><h2>Chapter <span class="label">3</span><span class="sep">. </span>The interactive debugger</h2></header><div class="db-bfs"><p>If you run XML Calabash with the <code class="option"><a href="running.html#cli-debugger">--debugger</a></code> option, the pipeline is loaded
+and then the debugger starts.</p><div class="admonition note"><div><div class="icon">ⓘ</div><div class="body"><header><div class="title">Note</div></header><div><p>This is a very new feature and there are a number of rough edges. One of
+the roughest is the random and seemingly arbitrary nature of the IDs that are
+used to identify steps. There are also discrepancies between atomic and compound
+steps that don’t really make any sense. Future releases will (hopefully) sand off
+some of the sharper edges!</p></div></div></div></div><p>The debugger prompt is <code>&gt; </code>. When you start a pipeline in the
+debugger, the first prompt occurs just before the initial pipeline begins running.
+Subsequent prompts occur when you step through the running pipeline or when breakpoints
+are encountered.</p><p>The debugger is always operating in the context of a particular step. There
+may be a stack of open steps. Moving around in the stack changes the context.</p></div><section id="debugging_s1" class="section"><header><h2>Command summary</h2></header><p>The available commands are:</p><ul class="itemizedlist"><li><p><code class="command"><a href="#dbg-breakpoint">breakpoint</a></code>, example or set breakpoints.</p></li><li><p><code class="command"><a href="#dbg-define">define</a></code>, create a local variable.</p></li></ul><section id="dbg-breakpoint" class="section"><header><h3>breakpoint</h3></header><p>Set or display breakpoints.</p><p>There are four forms of the <code class="command">breakpoint</code> command:
+</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">breakpoint</span> <span class="cmdpunct">[</span><span class="arg">on</span><span class="cmdpunct">]</span> <span class="arg"><em class="replaceable">id</em></span> <span class="cmdpunct">[</span><span class="arg">
+     <span class="arg">when</span>
+     <span class="arg"><em class="replaceable">expression</em></span>
+  </span><span class="cmdpunct">]</span></div></div><p>Sets a breakpoint before the step <em class="replaceable">id</em> is
+executed. If an XPath <em class="replaceable">expression</em> is provided,
+the breakpoint is conditional on that expression. The breakpoint only
+occurs if the effective boolean value of the expression is true.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">breakpoint</span> <span class="cmdpunct">[</span><span class="arg">on</span><span class="cmdpunct">]</span> <span class="arg"><em class="replaceable">id</em></span> <span class="cmdpunct">[</span><span class="arg">
+     <span class="cmdpunct">[</span><span class="arg">at</span><span class="cmdpunct">]</span>
+     <span class="arg">input</span>
+     <span class="arg"><em class="replaceable">port</em></span>
+  </span><span class="cmdpunct">]</span> <span class="cmdpunct">[</span><span class="arg">
+     <span class="arg">when</span>
+     <span class="arg"><em class="replaceable">expression</em></span>
+  </span><span class="cmdpunct">]</span></div></div><p>Sets a breakpoint before the step <em class="replaceable">id</em> is
+executed. This breakpoint is conditional on input arriving on
+<em class="replaceable">port</em>.
+If an XPath <em class="replaceable">expression</em> is provided,
+it will be evaluated once for each input on the specified <em class="replaceable">port</em>,
+with the input as the context item. The breakpoint only
+occurs if the effective boolean value of at least one expression is true.</p><p>Unlike breakpoints on output ports, the breakpoint occurs just before
+the step executes. An “input” breakpoint is just a special kind of conditional
+breakpoint.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">breakpoint</span> <span class="cmdpunct">[</span><span class="arg">on</span><span class="cmdpunct">]</span> <span class="arg"><em class="replaceable">id</em></span> <span class="cmdpunct">[</span><span class="arg">
+     <span class="cmdpunct">[</span><span class="arg">at</span><span class="cmdpunct">]</span>
+     <span class="arg">output</span>
+     <span class="arg"><em class="replaceable">port</em></span>
+  </span><span class="cmdpunct">]</span> <span class="cmdpunct">[</span><span class="arg">
+     <span class="arg">when</span>
+     <span class="arg"><em class="replaceable">expression</em></span>
+  </span><span class="cmdpunct">]</span></div></div><p>Sets a breakpoint that occurs when the step <em class="replaceable">id</em>
+produces a document on its output port named <em class="replaceable">port</em>.
+If an XPath <em class="replaceable">expression</em> is provided,
+it will be evaluated with the document as the context item. The breakpoint only
+occurs if the effective boolean value of the expression is true.</p><p>When this breakpoint occurs, a variable named <code class="literal">cx:document</code>
+is added to the local variables. If the value of this variable is changed,
+the document that’s actually sent as output will be changed accordingly.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">breakpoint</span></div></div><p>If used with no arguments, the <code class="command">breakpoint</code> prints a summary
+of enabled breakpoints.</p><p>The commands <code class="command">break</code> and <code class="command">b</code> are
+synonyms for <code class="command">breakpoint</code>.</p></section><section id="dbg-define" class="section"><header><h3>define</h3></header><p>Define a local variable.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">define</span> <span class="arg">$<em class="replaceable">varname</em></span> <span class="arg">=</span> <span class="arg"><em class="replaceable">expression</em></span></div></div><p>Creates a local variable named <code class="varname">$varname</code> and assigns to it
+the value that results from evaluating the expression. (If an error occurs
+evaluating the expression, the empty sequence will be assigned.)</p><p>You can only define variables that do not already exist. To change the
+value of an existing variable, use <a href="#dbg-set" class="link">set</a>.</p><p>Local variables shadow step options of the same name.</p><p>The command <code class="command">def</code> is a synonym for
+<code class="command">define</code>.</p></section><section id="dbg-down" class="section"><header><h3>down</h3></header><p>Move down in the stack.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">down</span> <span class="cmdpunct">[</span><span class="arg">frames</span><span class="cmdpunct">]</span></div></div><p>Moves down <em class="replaceable">frames</em> stack frames, or one frame if
+<em class="replaceable">frames</em> is not specified. Has no effect if you’re
+already on the last frame.</p><p>The command <code class="command">d</code> is a synonym for
+<code class="command">down</code>.</p></section><section id="dbg-exit" class="section"><header><h3>exit</h3></header><p>Exit the debugger and the pipeline.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">exit</span></div></div><p>Quits the debugger and aborts execution of the pipeline.</p><p>The commands <code class="command">x</code>, <code class="command">quit</code>,
+and <code class="command">q</code> are
+synonyms for <code class="command">exit</code>.</p></section><section id="dbg-help" class="section"><header><h3>help</h3></header><p>Get help.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">help</span> <span class="cmdpunct">[</span><span class="arg">command</span><span class="cmdpunct">]</span></div></div><p>Displays a summary of the debugger commands. If <em class="replaceable">command</em> is
+provided, more detail is given about that command.</p><p>The commands <code class="command">h</code> and <code class="command">?</code> are
+synonyms for <code class="command">help</code>.</p></section><section id="dbg-inputs" class="section"><header><h3>inputs</h3></header><p>Show the step inputs.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">inputs</span></div></div><p>Displays a summary of the inputs provided to the step. These can be
+examined in more detail with the <code class="varname">cx:input</code> map.</p><p>The command <code class="command">i</code> is a
+synonym for <code class="command">inputs</code>.</p></section><section id="dbg-models" class="section"><header><h3>models</h3></header><p>Show the pipeline models.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">models</span> <span class="cmdpunct">[</span><span class="arg">model</span><span class="cmdpunct">]</span></div></div><p>In order to execute a pipeline, XML Calabash transforms it into a graph model.
+These models are then instantiated to be executed. The <code class="command">model</code> command
+allows you to explore the available models.</p><p>(At the moment, the mapping from model identifiers to the identifiers used during
+pipeline execution is unpredictable. Hopefully, that will be resolved in the future,
+allowing you to predict a step id for use in a breakpoint directly from the model.)</p><p>The commands <code class="command">mod</code> and <code class="command">m</code> are
+synonyms for <code class="command">model</code>.</p></section><section id="dbg-namespace" class="section"><header><h3>namespace</h3></header><p>Set or display namespace bindings.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">namespace</span> <span class="cmdpunct">[</span><span class="arg">
+   <span class="arg"><em class="replaceable">prefix</em></span>
+   <span class="arg">=</span>
+   <span class="arg">"uri"</span>
+</span><span class="cmdpunct">]</span></div></div><p>Assigns the URI <em class="replaceable">uri</em> to the namespace prefix
+<em class="replaceable">prefix</em> in the local namespace bindings. For the
+purpose of evaluating expressions, local namespace bindings shadow bindings
+from the step context.</p><p>If entered with no binding, <code class="command">namespace</code> prints the current
+bindings.</p><p>The command <code class="command">ns</code> is a
+synonym for <code class="command">namespace</code>.</p></section><section id="dbg-options" class="section"><header><h3>options</h3></header><p>Display (atomic) step options and local variables.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">options</span></div></div><p>Displays the names of any options defined on the current (atomic) step
+or in local variables. These names can be used in expressions. Changing the value
+of a step option changes the value the step will receive when it runs!</p><p>The commands <code class="command">o</code>, <code class="command">variables</code>
+and <code class="command">var</code> are
+synonyms for <code class="command">options</code>.</p></section><section id="dbg-run" class="section"><header><h3>run</h3></header><p>Continue execution of the pipeline.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">run</span></div></div><p>Starts running the pipeline again. Execution will continue until the next
+breakpoint or until the pipeline finishes.</p><p>The command <code class="command">r</code> is a
+synonym for <code class="command">run</code>.</p></section><section id="dbg-set" class="section"><header><h3>set</h3></header><p>Set the value of a step option of local variable.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">set</span> <span class="arg">$<em class="replaceable">varname</em></span> <span class="arg">=</span> <span class="arg"><em class="replaceable">expression</em></span></div></div><p>Changes the value of the stop option or local variable named
+<code class="varname">$varname</code> to the value that results from
+evaluating the expression. (If an error occurs evaluating the expression, the
+empty sequence will be assigned.)</p><p>You can only set the values of options or variables that already exist. To create a
+new variable, use <a href="#dbg-define" class="link">define</a>.</p></section><section id="dbg-show" class="section"><header><h3>show</h3></header><p>Show the results of evaluating an expression.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">show</span> <span class="arg"><em class="replaceable">expression</em></span></div></div><p>Evaluates the expression provided and displays the result.</p><p>The commands <code class="command">eval</code> and <code class="command">echo</code> are
+synonyms for <code class="command">show</code>.</p></section><section id="dbg-stack" class="section"><header><h3>stack</h3></header><p>Display the stack.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">stack</span></div></div><p>Displays the current stack. The stack frame that is the
+current context is marked with a <code class="literal">*</code>.
+</p></section><section id="dbg-step" class="section"><header><h3>step</h3></header><p>Execute the current step.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">step</span></div></div><p>Executes the current step, then returns to the debugger. (If a breakpoint
+occurs before the next step, execution will stop at the breakpoint.)</p><p>The command <code class="command">s</code> is a synonym for
+<code class="command">step</code>.</p></section><section id="dbg-subpipeline" class="section"><header><h3>subpipeline</h3></header><p>Show subpipeline steps.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">subpipeline</span></div></div><p>Displays the models that are children of the current (compound) step.</p><p>The command <code class="command">sub</code> is a synonym for
+<code class="command">subpipeline</code>.</p></section><section id="dbg-up" class="section"><header><h3>up</h3></header><p>Move up in the stack.</p><div class="cmdsynopsis-wrap"><div class="cmdsynopsis"><span class="command">up</span> <span class="cmdpunct">[</span><span class="arg">frames</span><span class="cmdpunct">]</span></div></div><p>Moves up <em class="replaceable">frames</em> stack frames, or one frame if
+<em class="replaceable">frames</em> is not specified. Has no effect if you’re
+already on the first frame.</p><p>The command <code class="command">u</code> is a synonym for
+<code class="command">up</code>.</p></section></section><section id="debugger-example" class="section"><header><h2>Debugger example</h2></header><p>To explore how the debugger works, let’s work through a small example.
+The pipeline in <a href="#debugger-pipeline" class="xref xref-figure">Figure <span class="label">3<span class="sep">.</span>1</span>, “Sample debugging pipeline”</a> is a simple, linear pipeline
+with a few extra identity steps.</p><div id="debugger-pipeline" class="figure formalobject"><div class="pre-wrap programlisting-wrap highlight" db-startinglinenumber="1" db-numberoflines="26"><pre class="language-xml long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln"> 1 <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:declare-step</span> <span class="na">xmlns:p=</span><span class="s">"http://www.w3.org/ns/xproc"</span></code></span></span>
+<span class="line" db-line="2"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>                <span class="na">xmlns:ex=</span><span class="s">"https://xmlcalabash.com/ns/examples"</span></code></span></span>
+<span class="line" db-line="3"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>                <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span></code></span></span>
+<span class="line" db-line="4"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>                <span class="na">version=</span><span class="s">"3.0"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="5"><span class="ln"> 5 <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:output</span> <span class="na">port=</span><span class="s">"result"</span> <span class="na">sequence=</span><span class="s">"true"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="6"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="7"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:declare-step</span> <span class="na">type=</span><span class="s">"ex:ident"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="8"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;p:input</span> <span class="na">port=</span><span class="s">"source"</span> <span class="na">sequence=</span><span class="s">"true"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="9"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;p:output</span> <span class="na">port=</span><span class="s">"result"</span> <span class="na">sequence=</span><span class="s">"true"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="10"><span class="ln">10 <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;p:identity/&gt;</span></code></span></span>
+<span class="line" db-line="11"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;/p:declare-step&gt;</span></code></span></span>
+<span class="line" db-line="12"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="13"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:xinclude&gt;</span></code></span></span>
+<span class="line" db-line="14"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;p:with-input</span> <span class="na">href=</span><span class="s">"../xml/default-input.xml"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="15"><span class="ln">15 <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;/p:xinclude&gt;</span></code></span></span>
+<span class="line" db-line="16"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="17"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:identity</span> <span class="na">name=</span><span class="s">"id1"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="18"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="19"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;ex:ident</span> <span class="na">name=</span><span class="s">"ex1"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="20"><span class="ln">20 <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="21"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:add-attribute</span> <span class="na">name=</span><span class="s">"add"</span> <span class="na">match=</span><span class="s">"//ex:chap|//ex:app"</span></code></span></span>
+<span class="line" db-line="22"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>                 <span class="na">attribute-name=</span><span class="s">"role"</span> <span class="na">attribute-value=</span><span class="s">"test"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="23"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="24"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;p:identity</span> <span class="na">name=</span><span class="s">"id2"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="25"><span class="ln">25 <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="26"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;/p:declare-step&gt;</span></code></span></span></pre></div><header><div class="title">Figure <span class="label">3<span class="sep">.</span>1</span><span class="sep">. </span>Sample debugging pipeline</div></header></div><p>To understand what the debugger sees, consider the graph shown in
+<a href="#debugger-model" class="xref xref-figure">Figure <span class="label">3<span class="sep">.</span>2</span>, “The pipeline graph model”</a>.</p><div id="debugger-model" class="figure formalobject"><div class="mediaobject"><div class="media image"><picture class="imageobject"><img src="./img/debugger-graph.svg"/></picture></div></div><header><div class="title">Figure <span class="label">3<span class="sep">.</span>2</span><span class="sep">. </span>The pipeline graph model</div></header></div><p>There are two models, one for each pipeline. And note that there are
+“extra” atomic steps at the head and foot of each compound step. Let’s start
+running this pipeline under the debugger:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">$ </span><span class="userinput">xmlcalabash debugger-example.xpl --debugger</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Debugger at MIC460.1 / !declare-step_IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput"><span class="prompt">&gt; </span></span></code></span></span></pre></div><p>The message tells us that we’re at the start of the “main” pipeline and
+the debugger is waiting for commands. We can look at the models with the
+<code class="command">models</code>:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">models</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">*IC460 p:declare-step/IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput"> IC462 p:declare-step/IC462: ex:ident</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">models IC462</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">MIC465 p:identity !identity_IC465</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">models IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">MIC496 cx:document !document_IC496</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">MIC466 p:xinclude !xinclude_IC466</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">id1_IC468 p:identity id1</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">ex1_IC469 ex:ident ex1</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">add_IC470 p:add-attribute add</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">id2_IC474 p:identity id2</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>We can see that these models reflect the structure of the compiled pipelines.</p><p>Let’s look at the stack:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">stack</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">*[0] !declare-step_IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">step</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Debugger at MIC460.2 / !declare-step_IC460/head</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">step</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Debugger at MIC496.7 / !document_IC496</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">stack</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput"> [0] !declare-step_IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">*[1] !document_IC496</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>The initial stack is just the one step, the main pipeline waiting to be run.
+Stepping forward once takes us the head of the compound step. Stepping foward again
+takes us to the <code class="tag tag-element">p:document</code> step. (Note that the order in which steps are run
+depends on the connections between them, they are not displayed in any particular order
+by the model or <code class="command">subpipeline</code> commands.)</p><p>We can explore the inputs to the step.</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">inputs</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">options</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Step options:</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">  $href</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">  $document-properties</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">  $parameters</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">show $href</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">../xml/default-input.xml</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>The step has no inputs and three options. We can use the <code class="command">show</code>
+command to inspect the values of the options. We could also use the <code class="command">set</code>
+command to <em>change them</em>.</p><p>Let’s set a breakpoint on the <code class="tag tag-element">ex:ident</code> step:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">up</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">stack</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">*[0] !declare-step_IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput"> [1] !document_IC496</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">subpipeline</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">MIC496.7 / !document_IC496</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">MIC466.8 / !xinclude_IC466</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">id1_IC468.9 / id1</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">MIC462.4 / !declare-step_IC462</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">add_IC470.10 / add</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">id2_IC474.11 / id2</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">break on MIC462.4</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>We need the id of the <code class="tag tag-element">ex:ident</code> step. To find it, we navigate up
+to the stack frame for the compound step, then we look at its <code class="command">subpipeline</code>.
+The step we’re interested is the one named “<code class="literal">!declare_step_IC462</code>.
+Once we know its id, we can set a breakpoint on it.</p><p>Using <code class="command">run</code>, we can advance to the breakpoint.</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">run</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Debugger at MIC462.4 / !declare-step_IC462</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">stack</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput"> [0] !declare-step_IC460</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">*[1] !declare-step_IC462</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>Now let’s do something more interesting. Let’s set a breakpoint on the output 
+of the <code class="tag tag-element">p:add-attribute</code> step if there’s a role attribute on the output.</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">break on add_IC470.10 output result when //ex:chap[@role]</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span><code class="command">run</code></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Output from add_IC470.10 on result satisfies //ex:chap[@role]</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">Debugger at add_IC470.10 / add</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>We can look at that document with <code class="command">show</code>:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">show $cx:document</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">&lt;doc xmlns="https://xmlcalabash.com/ns/examples"</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">     xmlns:xi="http://www.w3.org/2001/XInclude"</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">     class="book"&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;chap former="1" class="test" role="test"&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;title&gt;First Chapter&lt;/title&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;p&gt;…&lt;/p&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;/chap&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;chap role="test"&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;title&gt;Second Chapter&lt;/title&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;p&gt;…&lt;/p&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;/chap&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;chap role="test"&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;title&gt;Third Chapter&lt;/title&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;p&gt;…&lt;/p&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;/chap&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;app role="test"&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;title&gt;Appendix&lt;/title&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">      &lt;p&gt;…&lt;/p&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">   &lt;/app&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">&lt;/doc&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>For a last example, let’s be a little cheeky and change the output:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">set $cx:document = parse-xml("&lt;change role='nothing to see here'/&gt;")</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="prompt">&gt; </span></code></span></span></pre></div><p>We’ve passed all our breakpoints, so running the pipeline again will run
+to the end.</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">&gt; </span><span class="userinput">run</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">=== result :: 1 :: file:/…/documentation/src/examples/xml/default-input.xml ===</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">&lt;change role="nothing to see here"/&gt;</span></code></span></span>
+<span class="line"><span class="ld"><code><span class="computeroutput">=================================================================================================================</span></code></span></span></pre></div><p>Hopefully, that gives you a flavor for what’s possible.</p></section></section></main><nav class="bottom"><table><tr><td class="previous"><a href="running.html">Prev</a></td><td class="up"><a href="index.html">Up</a></td><td class="next"><a href="configuration.html">Next</a></td></tr><tr><td class="previous">Chapter <span class="label">2</span><span class="sep">. </span>Running XML Calabash</td><td class="up"><a href="index.html">Home</a></td><td class="next">Appendix <span class="label">A</span><span class="sep">. </span>Configuration</td></tr></table><nav class="tocopen"></nav><nav class="toc"></nav><!-- Hide ToC details from user agents that don’t support JS --><script type="text/html" class="tocopen"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAABDklEQVQ4je2UUW3EMAyGv0wDUAhlkDBIyuAYXCEclEJoGZRBUgYOgzJoGHgPW6o7rWq35+2TIkWW9duW7N+oKuM46jiOGGMAaNsW5xzee5xzn8EvRESXZUFEWNcVAFWl73v6vjcGUIAYIyEEANZ1RUSY55lSCo/HA4BhGGiahtvthnOOtm0BSCnRdd1eVAGNMeoR27aptVattbpt22FOjFGrzjsX1I7q/4q3y4xf8i/4FwT3Pcw5Y4zBWvujfQMopZBzJuf8XbCeVyWEgHOO+/2+x0SEaZpIKSEih0X2Wz6jdlxKuezaqL7qpZS0lLKbw/M4ANba3RyapiGE8OJGqOrpizGq916999VATvM/AGFn1sxsVjL5AAAAAElFTkSuQmCC" alt="[toc]"/></script><script type="text/html" class="toc"><header><span>Table of Contents</span><span class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAtklEQVQ4jaWT0Q3DIAxEz52AEbyB2cDZhBEY3SNcPyqqBEwqpZaQAHNP5jBCEiJCPAiSIgAeiUe8zoveO9x9e9jd0XtfKwHA1hpHtNY49rO8u59zn4mqMiJSyFkcEVTVFQCAtdYFMotrrXN111JnyA/xCsggN2JeXmGEmaGU8l2XUmBm29fZuh0RW2PTK2SGZcamADPb3nmGmNkKOI7j1rAzJG2kcWhqkstQ1QX+/2ciKU/FJOUN6JFZYWpmK3sAAAAASUVORK5CYII=" alt="X"/></span><p class="ptoc-search"><input class="ptoc-search" placeholder="Search" style="width: 80%"/></p></header><div db-persistent-toc="persistent-toc.html" db-prefix="">Loading…</div></script></nav></body></html>
