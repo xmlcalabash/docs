@@ -19,6 +19,13 @@ $dokka.location:com.xmlcalabash.datamodel/XProcExpression.Companion///PointingTo
 $dokka.location:com.xmlcalabash.datamodel/XProcMatchExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcMatchExpression.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/XProcSelectExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcSelectExpression.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/XProcShortcutExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcShortcutExpression.Companion.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.Breakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.Breakpoint.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.ConditionalBreakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.ConditionalBreakpoint.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.DebuggerCommand///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.DebuggerCommand.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.InputBreakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.InputBreakpoint.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.OutputBreakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.OutputBreakpoint.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.StackFrame///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.StackFrame.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.UnconditionalBreakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.UnconditionalBreakpoint.html
 $dokka.location:com.xmlcalabash.documents/XProcDocument.Companion///PointingToDeclaration/com/xmlcalabash/documents/XProcDocument.Companion.html
 $dokka.location:com.xmlcalabash.exceptions/DefaultErrorExplanation.ErrorExplanationTemplate///PointingToDeclaration/com/xmlcalabash/exceptions/DefaultErrorExplanation.ErrorExplanationTemplate.html
 $dokka.location:com.xmlcalabash.exceptions/XProcError.Companion///PointingToDeclaration/com/xmlcalabash/exceptions/XProcError.Companion.html
@@ -123,6 +130,7 @@ $dokka.location:com.xmlcalabash.util/XmlViewportComposer.Recomposer///PointingTo
 com.xmlcalabash.api
 com.xmlcalabash.config
 com.xmlcalabash.datamodel
+com.xmlcalabash.debugger
 com.xmlcalabash.documents
 com.xmlcalabash.exceptions
 com.xmlcalabash.functions

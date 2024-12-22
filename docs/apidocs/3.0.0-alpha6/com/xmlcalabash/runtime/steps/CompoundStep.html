@@ -374,7 +374,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i4" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStep.html#run()>run</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#prepare()>prepare</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -382,7 +382,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i5" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> doc) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStep.html#run()>run</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -390,7 +390,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i6" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#output(java.lang.String,com.xmlcalabash.documents.XProcDocument)>output</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> document) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> doc) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -398,7 +398,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#close(java.lang.String)>close</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port) </code>
+                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#output(java.lang.String,com.xmlcalabash.documents.XProcDocument)>output</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> document) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -406,12 +406,20 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=TryStep.html#reset()>reset</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=ViewportStep.html#close(java.lang.String)>close</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i9" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=TryStep.html#reset()>reset</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=AbstractStep.html>AbstractStep</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#runStepsExhaustively(java.util.List)>runStepsExhaustively</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=AbstractStep.html>AbstractStep</a>&gt; steps) </code>
@@ -419,7 +427,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i10" class="altColor">
+                                        <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#toString()>toString</a>() </code>
@@ -565,6 +573,29 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                     <li class="blockList">
                                         <h4>instantiate</h4>
                                         <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ViewportStep.html#instantiate()>instantiate</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="prepare()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>prepare</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ViewportStep.html#prepare()>prepare</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
