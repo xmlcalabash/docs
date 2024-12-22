@@ -176,6 +176,12 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                                         </tr>
                                         
                                         <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=../config/XmlCalabash.html>XmlCalabash</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=DefaultOutputReceiver.html#xmlCalabash>xmlCalabash</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final Processor</code></td>
                                             <th class="colSecond" scope="row"><code><a href=DefaultOutputReceiver.html#processor>processor</a></code></th>
                                             <td class="colLast"></td>
@@ -207,7 +213,13 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#DefaultOutputReceiver(net.sf.saxon.s9api.Processor)">DefaultOutputReceiver</a></span>(Processor processor)</code></th>
+                                                        href="#DefaultOutputReceiver(com.xmlcalabash.runtime.XProcStepConfiguration)">DefaultOutputReceiver</a></span>(<a href=../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a> config)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+                                            <tr class="rowColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#DefaultOutputReceiver(com.xmlcalabash.config.XmlCalabash,net.sf.saxon.s9api.Processor)">DefaultOutputReceiver</a></span>(<a href=../config/XmlCalabash.html>XmlCalabash</a> xmlCalabash, Processor processor)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -261,6 +273,14 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
+                                            <td class="colFirst"><code>final <a href=../config/XmlCalabash.html>XmlCalabash</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=DefaultOutputReceiver.html#getXmlCalabash()>getXmlCalabash</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>final Processor</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=DefaultOutputReceiver.html#getProcessor()>getProcessor</a>() </code>
@@ -268,7 +288,7 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i1" class="rowColor">
+                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=DefaultOutputReceiver.html#output(java.lang.String,com.xmlcalabash.documents.XProcDocument)>output</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
@@ -276,7 +296,7 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i2" class="altColor">
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=DefaultOutputReceiver.html#write(java.lang.String,com.xmlcalabash.documents.XProcDocument,java.lang.Integer,java.lang.Integer)>write</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../documents/XProcDocument.html>XProcDocument</a> document, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> position, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a> total) </code>
@@ -315,11 +335,21 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="DefaultOutputReceiver(net.sf.saxon.s9api.Processor)"></a>
+                                <a name="DefaultOutputReceiver(com.xmlcalabash.runtime.XProcStepConfiguration)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>DefaultOutputReceiver</h4>
-                                        <pre>DefaultOutputReceiver(Processor processor)</pre>
+                                        <pre>DefaultOutputReceiver(<a href=../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a> config)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                                <a name="DefaultOutputReceiver(com.xmlcalabash.config.XmlCalabash,net.sf.saxon.s9api.Processor)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>DefaultOutputReceiver</h4>
+                                        <pre>DefaultOutputReceiver(<a href=../config/XmlCalabash.html>XmlCalabash</a> xmlCalabash, Processor processor)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -337,6 +367,29 @@ public class <span class="typeNameLabel"><a href=DefaultOutputReceiver.html>Defa
                                 <!--   -->
                             </a>
                                 <h3>Method Detail</h3>
+                                
+                                <a id="getXmlCalabash()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getXmlCalabash</h4>
+                                        <pre class="methodSignature"> final <a href=../config/XmlCalabash.html>XmlCalabash</a> <a href=DefaultOutputReceiver.html#getXmlCalabash()>getXmlCalabash</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
                                 
                                 <a id="getProcessor()">
                                     <!--   -->

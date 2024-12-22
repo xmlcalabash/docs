@@ -173,8 +173,20 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                         </tr>
                                         
                                         <tr class="altColor">
-                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;</code></td>
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=../datamodel/MediaType.html>MediaType</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#defaultProperties>defaultProperties</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=../datamodel/MediaType.html>MediaType</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#overrideProperties>overrideProperties</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=../config/XmlCalabash.html>XmlCalabash</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#xmlCalabash>xmlCalabash</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -216,7 +228,13 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                         
                                             <tr class="rowColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#XProcSerializer(net.sf.saxon.s9api.Processor)">XProcSerializer</a></span>(Processor processor)</code></th>
+                                                        href="#XProcSerializer(com.xmlcalabash.documents.DocumentContext)">XProcSerializer</a></span>(<a href=../documents/DocumentContext.html>DocumentContext</a> context)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+                                            <tr class="altColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#XProcSerializer(com.xmlcalabash.config.XmlCalabash,net.sf.saxon.s9api.Processor)">XProcSerializer</a></span>(<a href=../config/XmlCalabash.html>XmlCalabash</a> xmlCalabash, Processor processor)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -270,14 +288,30 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;</code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=../datamodel/MediaType.html>MediaType</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#getDefaultProperties()>getDefaultProperties</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i1" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=../datamodel/MediaType.html>MediaType</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#getOverrideProperties()>getOverrideProperties</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i1" class="rowColor">
+                                        <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code>final <a href=../config/XmlCalabash.html>XmlCalabash</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#getXmlCalabash()>getXmlCalabash</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>final Processor</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#getProcessor()>getProcessor</a>() </code>
@@ -285,15 +319,55 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i2" class="altColor">
+                                        <tr id="i4" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#write(com.xmlcalabash.documents.XProcDocument,java.io.OutputStream,com.xmlcalabash.datamodel.MediaType,java.util.Map)>write</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> doc, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html>OutputStream</a> stream, <a href=../datamodel/MediaType.html>MediaType</a> overrideContentType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; defaultProperties) </code>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#setDefaultProperty(com.xmlcalabash.datamodel.MediaType,net.sf.saxon.s9api.QName,java.lang.String)>setDefaultProperty</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, QName name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> value) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i3" class="rowColor">
+                                        <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#setDefaultProperties(com.xmlcalabash.datamodel.MediaType,java.util.Map)>setDefaultProperties</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; props) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#setOverrideProperty(com.xmlcalabash.datamodel.MediaType,net.sf.saxon.s9api.QName,java.lang.String)>setOverrideProperty</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, QName name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> value) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i7" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#setOverrideProperties(com.xmlcalabash.datamodel.MediaType,java.util.Map)>setOverrideProperties</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; props) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i8" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#write(com.xmlcalabash.documents.XProcDocument,java.io.File,com.xmlcalabash.datamodel.MediaType)>write</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> doc, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/File.html>File</a> file, <a href=../datamodel/MediaType.html>MediaType</a> overrideContentType) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i9" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#write(com.xmlcalabash.documents.XProcDocument,java.io.OutputStream,com.xmlcalabash.datamodel.MediaType)>write</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> doc, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html>OutputStream</a> stream, <a href=../datamodel/MediaType.html>MediaType</a> overrideContentType) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
                                             <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=XProcSerializer.html#write(net.sf.saxon.s9api.XdmNode,java.io.OutputStream,java.util.Map)>write</a>(XdmNode node, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html>OutputStream</a> stream, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; defaultProperties) </code>
@@ -342,11 +416,21 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                     </li>
                                 </ul>
                                 
-                                <a name="XProcSerializer(net.sf.saxon.s9api.Processor)"></a>
+                                <a name="XProcSerializer(com.xmlcalabash.documents.DocumentContext)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>XProcSerializer</h4>
-                                        <pre>XProcSerializer(Processor processor)</pre>
+                                        <pre>XProcSerializer(<a href=../documents/DocumentContext.html>DocumentContext</a> context)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                                <a name="XProcSerializer(com.xmlcalabash.config.XmlCalabash,net.sf.saxon.s9api.Processor)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>XProcSerializer</h4>
+                                        <pre>XProcSerializer(<a href=../config/XmlCalabash.html>XmlCalabash</a> xmlCalabash, Processor processor)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -365,6 +449,29 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                             </a>
                                 <h3>Method Detail</h3>
                                 
+                                <a id="getDefaultProperties()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getDefaultProperties</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=../datamodel/MediaType.html>MediaType</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;&gt; <a href=XProcSerializer.html#getDefaultProperties()>getDefaultProperties</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
                                 <a id="getOverrideProperties()">
                                     <!--   -->
                                 </a>
@@ -373,7 +480,30 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                           >
                                     <li class="blockList">
                                         <h4>getOverrideProperties</h4>
-                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; <a href=XProcSerializer.html#getOverrideProperties()>getOverrideProperties</a>()</pre>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=../datamodel/MediaType.html>MediaType</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt;&gt; <a href=XProcSerializer.html#getOverrideProperties()>getOverrideProperties</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getXmlCalabash()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getXmlCalabash</h4>
+                                        <pre class="methodSignature"> final <a href=../config/XmlCalabash.html>XmlCalabash</a> <a href=XProcSerializer.html#getXmlCalabash()>getXmlCalabash</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -411,7 +541,99 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                     </li>
                                 </ul>
                                 
-                                <a id="write(com.xmlcalabash.documents.XProcDocument,java.io.OutputStream,com.xmlcalabash.datamodel.MediaType,java.util.Map)">
+                                <a id="setDefaultProperty(com.xmlcalabash.datamodel.MediaType,net.sf.saxon.s9api.QName,java.lang.String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setDefaultProperty</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#setDefaultProperty(com.xmlcalabash.datamodel.MediaType,net.sf.saxon.s9api.QName,java.lang.String)>setDefaultProperty</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, QName name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> value)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="setDefaultProperties(com.xmlcalabash.datamodel.MediaType,java.util.Map)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setDefaultProperties</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#setDefaultProperties(com.xmlcalabash.datamodel.MediaType,java.util.Map)>setDefaultProperties</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; props)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOverrideProperty(com.xmlcalabash.datamodel.MediaType,net.sf.saxon.s9api.QName,java.lang.String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOverrideProperty</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#setOverrideProperty(com.xmlcalabash.datamodel.MediaType,net.sf.saxon.s9api.QName,java.lang.String)>setOverrideProperty</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, QName name, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> value)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOverrideProperties(com.xmlcalabash.datamodel.MediaType,java.util.Map)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOverrideProperties</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#setOverrideProperties(com.xmlcalabash.datamodel.MediaType,java.util.Map)>setOverrideProperties</a>(<a href=../datamodel/MediaType.html>MediaType</a> contentType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; props)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="write(com.xmlcalabash.documents.XProcDocument,java.io.File,com.xmlcalabash.datamodel.MediaType)">
                                     <!--   -->
                                 </a>
                                 <ul class=
@@ -419,7 +641,30 @@ public final class <span class="typeNameLabel"><a href=XProcSerializer.html>XPro
                                           >
                                     <li class="blockList">
                                         <h4>write</h4>
-                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#write(com.xmlcalabash.documents.XProcDocument,java.io.OutputStream,com.xmlcalabash.datamodel.MediaType,java.util.Map)>write</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> doc, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html>OutputStream</a> stream, <a href=../datamodel/MediaType.html>MediaType</a> overrideContentType, <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, XdmValue&gt; defaultProperties)</pre>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#write(com.xmlcalabash.documents.XProcDocument,java.io.File,com.xmlcalabash.datamodel.MediaType)>write</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> doc, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/File.html>File</a> file, <a href=../datamodel/MediaType.html>MediaType</a> overrideContentType)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="write(com.xmlcalabash.documents.XProcDocument,java.io.OutputStream,com.xmlcalabash.datamodel.MediaType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>write</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcSerializer.html#write(com.xmlcalabash.documents.XProcDocument,java.io.OutputStream,com.xmlcalabash.datamodel.MediaType)>write</a>(<a href=../documents/XProcDocument.html>XProcDocument</a> doc, <a href=https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html>OutputStream</a> stream, <a href=../datamodel/MediaType.html>MediaType</a> overrideContentType)</pre>
                                         <div class="block"></div>
 
                                         <dl>
