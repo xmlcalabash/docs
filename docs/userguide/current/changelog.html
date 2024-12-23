@@ -1,8 +1,33 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>Appendix C. Change log</title><link href="./css/pygments.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"/><meta name="dc.modified" content="2024-12-23T10:20:28Z"/><meta name="generator" content="DocBook xslTNG version 2.5.0 / 855db8f2 / SAXON HE 12.5"/><link href="./css/docbook-toc.css" rel="stylesheet"/><link href="./css/docbook.css" rel="stylesheet" media="screen"/><link href="img/icon.png" rel="shortcut icon"/><link href="./css/xmlcalabash.css" rel="stylesheet"/><link href="./css/xproc.css" rel="stylesheet"/><link rel="prev" href="tracing.html"/><link rel="up" href="index.html"/><link rel="home" href="index.html"/><script src="./js/persistent-toc.js" defer="defer"></script><script src="./js/chunk-nav.js" defer="defer"></script></head><body class="appendix component"><nav class="top"><div><a href="index.html">Home</a> <a href="index.html">Up</a>  <a href="tracing.html">Prev</a></div></nav><main><section id="changelog" db-chunk="changelog.html" db-id="d110e2128" class="appendix component"><header><h2>Appendix <span class="label">C</span><span class="sep">. </span>Change log</h2></header><p>This section documents the significant changes made in each release.
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>Appendix C. Change log</title><link href="./css/pygments.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"/><meta name="dc.modified" content="2024-12-23T11:24:02Z"/><meta name="generator" content="DocBook xslTNG version 2.5.0 / 855db8f2 / SAXON HE 12.5"/><link href="./css/docbook-toc.css" rel="stylesheet"/><link href="./css/docbook.css" rel="stylesheet" media="screen"/><link href="img/icon.png" rel="shortcut icon"/><link href="./css/xmlcalabash.css" rel="stylesheet"/><link href="./css/xproc.css" rel="stylesheet"/><link rel="prev" href="tracing.html"/><link rel="up" href="index.html"/><link rel="home" href="index.html"/><script src="./js/persistent-toc.js" defer="defer"></script><script src="./js/chunk-nav.js" defer="defer"></script></head><body class="appendix component"><nav class="top"><div><a href="index.html">Home</a> <a href="index.html">Up</a>  <a href="tracing.html">Prev</a></div></nav><main><section id="changelog" db-chunk="changelog.html" db-id="d110e2128" class="appendix component"><header><h2>Appendix <span class="label">C</span><span class="sep">. </span>Change log</h2></header><p>This section documents the significant changes made in each release.
 See the commits and pull requests on
 <a href="https://github.com/xmlcalabash/xmlcalabash3/" class="link">the repository</a> for
-finer detail.</p><div class="revhistory"><header><div class="title">Revision History</div></header><ul><li id="r300-alpha6" class="revision"><div class="revnumber"><span class="revnumber">3.0.0-alpha6</span>, <span class="date" time="2024-12-15">15 Dec 2024</span></div><div class="description"><div class="revdescription">
-<p>T.B.D.</p>
+finer detail.</p><div class="revhistory"><header><div class="title">Revision History</div></header><ul><li id="r300-alpha6" class="revision"><div class="revnumber"><span class="revnumber">3.0.0-alpha6</span>, <span class="date" time="2024-12-23">23 Dec 2024</span></div><div class="description"><div class="revdescription">
+<ul class="itemizedlist"><li><p>Added <a href="debugging.html" class="link">an interactive debugger</a>.</p></li><li><p>Added a <a href="tracing.html" class="link">tracing feature</a>.</p></li><li><p>Fixed
+<a href="https://github.com/xmlcalabash/xmlcalabash3/issues/48" class="link">issue #48</a>
+by supplying extension attributes to atomic steps.</p></li><li><p>Fixed
+<a href="https://github.com/xmlcalabash/xmlcalabash3/issues/47" class="link">issue #47</a>
+by documenting the <code class="option"><a href="running.html#cli-pipeline">pipeline</a></code> option.</p></li><li><p>Added support for a
+<code class="option"><a href="running.html#cli-init">--init</a></code> command line option to support registering
+extension functions before running a pipeline.</p></li><li><p>Refactored the API that provides inputs to atomic steps. The inputs are now
+cached by the implementation and made available when the step is run. The previous API didn’t
+require that inputs be cached, but the overwhelming majority of steps do. Centralizing
+that feature simplifies atomic step implementations and avoids bugs.</p></li><li><p>Fixed a bug where <code class="tag tag-element">p:store</code> could not store binary outputs.
+Generally improved handling of serialized outputs.
+Implemented support for the <code class="tag tag-element"><a href="configuration.html#cc.serialization">cc:serialization</a></code>
+configuration option.</p></li><li><p>Refactored the paged media steps. Documented the extensions supported by
+<code class="tag tag-element"><a href="https://docs.xmlcalabash.com/reference/current/p-css-formatter.html">p:css-formatter</a></code>
+and
+<code class="tag tag-element"><a href="https://docs.xmlcalabash.com/reference/current/p-xsl-formatter.html">p:xsl-formatter</a></code>.
+</p></li><li><p>Documented the <code class="function"><a href="https://docs.xmlcalabash.com/reference/current/xproc-functions.html#f.system-property">p:system-property</a></code> function, including the vendor-specific property
+names.</p></li><li><p>Refactored the logging-related configuration. Switched to the
+<a href="https://logback.qos.ch/" class="link">Logback</a> backend. Changed the
+<code class="option"><a href="running.html#cli-debug">--debug</a></code> option so that it enables debug logging.
+</p></li><li><p>Refactored and reorganized the <code class="option"><a href="running.html#cli-verbosity">--verbosity</a></code>
+values. They now align with debugging log levels.</p></li><li><p>Refactored how “empty” is handled. Empty inputs are now addressed when the
+graph model is built, not during pipeline construction. This simplifies construction
+and fixed at least one bug.</p></li><li><p>Fixed a bug in the way the error explanations file was parsed.</p></li><li><p>Attempted to make sure that error messages include the location of the error.
+Things are improved, though perhaps not fixed everywhere.</p></li><li><p>Refactored how step and model IDs are managed. The new system produces simpler,
+more predictable APIs.</p></li></ul>
 </div></div></li><li id="r300-alpha5" class="revision"><div class="revnumber"><span class="revnumber">3.0.0-alpha5</span>, <span class="date" time="2024-12-15">15 Dec 2024</span></div><div class="description"><div class="revdescription">
 <ul class="itemizedlist"><li><p>Refactored the way context information is maintained both at
 compile time and run time. This is a re-refactor of the refactor I
