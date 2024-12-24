@@ -108,6 +108,11 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
+                            <code>com.xmlcalabash.runtime.Monitor</code>
+                            
+                            ,
+                            
+                            
                             <code>com.xmlcalabash.tracing.TraceListener</code>
                             
                             
@@ -275,9 +280,9 @@ extends <a href=StandardTraceListener.html>StandardTraceListener</a>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code><a href=../documents/XProcDocument.html>XProcDocument</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=DetailTraceListener.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
+                                            <th class="colSecond" scope="row"><code><a href=DetailTraceListener.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/AbstractStep.html>AbstractStep</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/Consumer.html>Consumer</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -299,7 +304,7 @@ extends <a href=StandardTraceListener.html>StandardTraceListener</a>
                                             <!--   -->
                                         </a>
                                             <h3>Methods inherited from class&nbsp;com.xmlcalabash.tracing.StandardTraceListener</h3>
-                                            <code>getTrace, startExecution, stopExecution, summary</code></li>
+                                            <code>abortStep, endStep, getTrace, startStep, summary</code></li>
                                  
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
@@ -381,7 +386,7 @@ extends <a href=StandardTraceListener.html>StandardTraceListener</a>
                                           >
                                     <li class="blockList">
                                         <h4>sendDocument</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=DetailTraceListener.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document)</pre>
+                                        <pre class="methodSignature"> <a href=../documents/XProcDocument.html>XProcDocument</a> <a href=DetailTraceListener.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/AbstractStep.html>AbstractStep</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/Consumer.html>Consumer</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document)</pre>
                                         <div class="block"></div>
 
                                         <dl>

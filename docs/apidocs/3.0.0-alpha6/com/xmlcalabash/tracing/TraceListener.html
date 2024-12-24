@@ -108,6 +108,9 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
+                            <code>com.xmlcalabash.runtime.Monitor</code>
+                            
+                            
                         </dd>
                     </dl>
                     
@@ -115,7 +118,7 @@ var pathtoroot = "../../../";
                     <pre class="wrap-overflow">
 
 public interface <span class="typeNameLabel"><a href=TraceListener.html>TraceListener</a></span>
-
+ implements <a href=../runtime/Monitor.html>Monitor</a>
                     </pre>
                     <div class="block"></div>
 
@@ -246,30 +249,6 @@ public interface <span class="typeNameLabel"><a href=TraceListener.html>TraceLis
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=TraceListener.html#startExecution(com.xmlcalabash.runtime.steps.AbstractStep)>startExecution</a>(<a href=../runtime/steps/AbstractStep.html>AbstractStep</a> step) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=TraceListener.html#stopExecution(com.xmlcalabash.runtime.steps.AbstractStep,java.lang.Long)>stopExecution</a>(<a href=../runtime/steps/AbstractStep.html>AbstractStep</a> step, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html>Long</a> duration) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=TraceListener.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code>abstract XdmNode</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=TraceListener.html#summary(com.xmlcalabash.runtime.XProcStepConfiguration)>summary</a>(<a href=../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a> config) </code>
@@ -277,7 +256,7 @@ public interface <span class="typeNameLabel"><a href=TraceListener.html>TraceLis
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i4" class="altColor">
+                                        <tr id="i1" class="rowColor">
                                             <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=TraceListener.html#documentSummary(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.util.SaxonTreeBuilder,com.xmlcalabash.tracing.DocumentDetail)>documentSummary</a>(<a href=../runtime/XProcStepConfiguration.html>XProcStepConfiguration</a> config, <a href=../util/SaxonTreeBuilder.html>SaxonTreeBuilder</a> builder, <a href=DocumentDetail.html>DocumentDetail</a> detail) </code>
@@ -285,7 +264,7 @@ public interface <span class="typeNameLabel"><a href=TraceListener.html>TraceLis
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr id="i5" class="rowColor">
+                                        <tr id="i2" class="altColor">
                                             <td class="colFirst"><code>abstract <a href=https://docs.oracle.com/javase/8/docs/api/java/util/List.html>List</a>&lt;<a href=TraceDetail.html>TraceDetail</a>&gt;</code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=TraceListener.html#getTrace()>getTrace</a>() </code>
@@ -298,6 +277,12 @@ public interface <span class="typeNameLabel"><a href=TraceListener.html>TraceLis
                                 </div>
                                 <ul class="blockList">
                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.xmlcalabash.runtime.Monitor">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.xmlcalabash.runtime.Monitor</h3>
+                                            <code>abortStep, endStep, sendDocument, startStep</code></li>
+                                 
                                     <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
                                         <!--   -->
                                     </a>
@@ -336,75 +321,6 @@ public interface <span class="typeNameLabel"><a href=TraceListener.html>TraceLis
                                 <!--   -->
                             </a>
                                 <h3>Method Detail</h3>
-                                
-                                <a id="startExecution(com.xmlcalabash.runtime.steps.AbstractStep)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>startExecution</h4>
-                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=TraceListener.html#startExecution(com.xmlcalabash.runtime.steps.AbstractStep)>startExecution</a>(<a href=../runtime/steps/AbstractStep.html>AbstractStep</a> step)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="stopExecution(com.xmlcalabash.runtime.steps.AbstractStep,java.lang.Long)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>stopExecution</h4>
-                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=TraceListener.html#stopExecution(com.xmlcalabash.runtime.steps.AbstractStep,java.lang.Long)>stopExecution</a>(<a href=../runtime/steps/AbstractStep.html>AbstractStep</a> step, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html>Long</a> duration)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>sendDocument</h4>
-                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=TraceListener.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
                                 
                                 <a id="summary(com.xmlcalabash.runtime.XProcStepConfiguration)">
                                     <!--   -->

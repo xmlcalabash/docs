@@ -108,7 +108,7 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>com.xmlcalabash.debugger.Debugger</code>
+                            <code>com.xmlcalabash.runtime.Monitor</code>
                             
                             
                         </dd>
@@ -118,7 +118,7 @@ var pathtoroot = "../../../";
                     <pre class="wrap-overflow">
 
 public final class <span class="typeNameLabel"><a href=NopDebugger.html>NopDebugger</a></span>
- implements <a href=Debugger.html>Debugger</a>
+ implements <a href=../runtime/Monitor.html>Monitor</a>
                     </pre>
                     <div class="block"></div>
 
@@ -271,9 +271,17 @@ public final class <span class="typeNameLabel"><a href=NopDebugger.html>NopDebug
                                         </tr>
                                         
                                         <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=NopDebugger.html#abortStep(com.xmlcalabash.runtime.steps.AbstractStep,kotlin.Exception)>abortStep</a>(<a href=../runtime/steps/AbstractStep.html>AbstractStep</a> step, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html>Exception</a> ex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
                                             <td class="colFirst"><code><a href=../documents/XProcDocument.html>XProcDocument</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=NopDebugger.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
+                                            <th class="colSecond" scope="row"><code><a href=NopDebugger.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/AbstractStep.html>AbstractStep</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/Consumer.html>Consumer</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -378,6 +386,29 @@ public final class <span class="typeNameLabel"><a href=NopDebugger.html>NopDebug
                                     </li>
                                 </ul>
                                 
+                                <a id="abortStep(com.xmlcalabash.runtime.steps.AbstractStep,kotlin.Exception)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>abortStep</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=NopDebugger.html#abortStep(com.xmlcalabash.runtime.steps.AbstractStep,kotlin.Exception)>abortStep</a>(<a href=../runtime/steps/AbstractStep.html>AbstractStep</a> step, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html>Exception</a> ex)</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
                                 <a id="sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)">
                                     <!--   -->
                                 </a>
@@ -386,7 +417,7 @@ public final class <span class="typeNameLabel"><a href=NopDebugger.html>NopDebug
                                           >
                                     <li class="blockList">
                                         <h4>sendDocument</h4>
-                                        <pre class="methodSignature"> <a href=../documents/XProcDocument.html>XProcDocument</a> <a href=NopDebugger.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document)</pre>
+                                        <pre class="methodSignature"> <a href=../documents/XProcDocument.html>XProcDocument</a> <a href=NopDebugger.html#sendDocument(kotlin.Pair,kotlin.Pair,com.xmlcalabash.documents.XProcDocument)>sendDocument</a>(<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/AbstractStep.html>AbstractStep</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; from, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html>Pair</a>&lt;<a href=../runtime/steps/Consumer.html>Consumer</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>&gt; to, <a href=../documents/XProcDocument.html>XProcDocument</a> document)</pre>
                                         <div class="block"></div>
 
                                         <dl>

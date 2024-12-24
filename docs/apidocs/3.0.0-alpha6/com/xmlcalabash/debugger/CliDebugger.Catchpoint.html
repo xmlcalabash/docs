@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>ReceiverProxy </title>
+    <title>Catchpoint </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
@@ -88,8 +88,8 @@ var pathtoroot = "../../../";
 
 <main role="main">
     <div class="header">
-        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.xmlcalabash.runtime</a></div>
-        <h2 title="Class XProcPipeline.ReceiverProxy" class="title">Class XProcPipeline.ReceiverProxy</h2>
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">com.xmlcalabash.debugger</a></div>
+        <h2 title="Class CliDebugger.Catchpoint" class="title">Class CliDebugger.Catchpoint</h2>
     </div>
     <div class="contentContainer">
         <!-- <ul class="inheritance">
@@ -108,17 +108,14 @@ var pathtoroot = "../../../";
                         <dt>All Implemented Interfaces:</dt>
                         <dd>
                             
-                            <code>com.xmlcalabash.runtime.steps.Consumer</code>
-                            
-                            
                         </dd>
                     </dl>
                     
                     <hr>
                     <pre class="wrap-overflow">
 
-public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverProxy.html>XProcPipeline.ReceiverProxy</a></span>
- implements <a href=steps/Consumer.html>Consumer</a>
+public class <span class="typeNameLabel"><a href=CliDebugger.Catchpoint.html>CliDebugger.Catchpoint</a></span>
+
                     </pre>
                     <div class="block"></div>
 
@@ -177,7 +174,13 @@ public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverPro
                                         
                                         <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcPipeline.ReceiverProxy.html#id>id</a></code></th>
+                                            <th class="colSecond" scope="row"><code><a href=CliDebugger.Catchpoint.html#id>id</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=CliDebugger.Catchpoint.html#code>code</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
@@ -207,7 +210,7 @@ public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverPro
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#XProcPipeline.ReceiverProxy()">XProcPipeline.ReceiverProxy</a></span>()</code></th>
+                                                        href="#CliDebugger.Catchpoint(java.lang.String,java.lang.String)">CliDebugger.Catchpoint</a></span>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> id, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> code)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -261,25 +264,17 @@ public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverPro
                                         </tr>
                                         
                                         <tr id="i0" class="altColor">
-                                            <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcPipeline.ReceiverProxy.html#getId()>getId</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CliDebugger.Catchpoint.html#getId()>getId</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i1" class="rowColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcPipeline.ReceiverProxy.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../documents/XProcDocument.html>XProcDocument</a> doc) </code>
-                                            </th>
-                                            <td class="colLast"></td>
-                                        </tr>
-                                        
-                                        <tr id="i2" class="altColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
-                                            </td>
-                                            <th class="colSecond" scope="row"><code><a href=XProcPipeline.ReceiverProxy.html#close(java.lang.String)>close</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CliDebugger.Catchpoint.html#getCode()>getCode</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -315,11 +310,11 @@ public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverPro
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="XProcPipeline.ReceiverProxy()"></a>
+                                <a name="CliDebugger.Catchpoint(java.lang.String,java.lang.String)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
-                                        <h4>XProcPipeline.ReceiverProxy</h4>
-                                        <pre>XProcPipeline.ReceiverProxy()</pre>
+                                        <h4>CliDebugger.Catchpoint</h4>
+                                        <pre>CliDebugger.Catchpoint(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> id, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> code)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -346,7 +341,7 @@ public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverPro
                                           >
                                     <li class="blockList">
                                         <h4>getId</h4>
-                                        <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> <a href=XProcPipeline.ReceiverProxy.html#getId()>getId</a>()</pre>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> <a href=CliDebugger.Catchpoint.html#getId()>getId</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>
@@ -361,38 +356,15 @@ public final class <span class="typeNameLabel"><a href=XProcPipeline.ReceiverPro
                                     </li>
                                 </ul>
                                 
-                                <a id="input(java.lang.String,com.xmlcalabash.documents.XProcDocument)">
-                                    <!--   -->
-                                </a>
-                                <ul class=
-                                              "blockList"
-                                          >
-                                    <li class="blockList">
-                                        <h4>input</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcPipeline.ReceiverProxy.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../documents/XProcDocument.html>XProcDocument</a> doc)</pre>
-                                        <div class="block"></div>
-
-                                        <dl>
-
-                                        
-
-                                        
-
-                                        
-
-                                        </dl>
-                                    </li>
-                                </ul>
-                                
-                                <a id="close(java.lang.String)">
+                                <a id="getCode()">
                                     <!--   -->
                                 </a>
                                 <ul class=
                                               "blockListLast"
                                           >
                                     <li class="blockList">
-                                        <h4>close</h4>
-                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=XProcPipeline.ReceiverProxy.html#close(java.lang.String)>close</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port)</pre>
+                                        <h4>getCode</h4>
+                                        <pre class="methodSignature"> final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> <a href=CliDebugger.Catchpoint.html#getCode()>getCode</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>

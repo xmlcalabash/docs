@@ -212,60 +212,66 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         </tr>
                                         
                                         <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=CompoundStep.html>CompoundStep</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#parent>parent</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#_id>_id</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#id>id</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=../../datamodel/Location.html>Location</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#location>location</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#inputCount>inputCount</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a>, <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html>Integer</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#outputCount>outputCount</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/util/Map.html>Map</a>&lt;QName, <a href=../../datamodel/StaticOptionDetails.html>StaticOptionDetails</a>&gt;</code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#staticOptions>staticOptions</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final <a href=../../util/Verbosity.html>Verbosity</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#verbosity>verbosity</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=../XProcStepConfiguration.html>XProcStepConfiguration</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#stepConfig>stepConfig</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="altColor">
+                                        <tr class="rowColor">
                                             <td class="colFirst"><code>private final QName</code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#type>type</a></code></th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
-                                        <tr class="rowColor">
+                                        <tr class="altColor">
                                             <td class="colFirst"><code>private final <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code></td>
                                             <th class="colSecond" scope="row"><code><a href=ViewportStep.html#name>name</a></code></th>
                                             <td class="colLast"></td>
@@ -297,7 +303,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         
                                             <tr class="altColor">
                                                 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
-                                                        href="#CompoundStepHead(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.runtime.model.HeadModel)">CompoundStepHead</a></span>(<a href=../XProcStepConfiguration.html>XProcStepConfiguration</a> config, <a href=../model/HeadModel.html>HeadModel</a> step)</code></th>
+                                                        href="#CompoundStepHead(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.runtime.steps.CompoundStep,com.xmlcalabash.runtime.model.HeadModel)">CompoundStepHead</a></span>(<a href=../XProcStepConfiguration.html>XProcStepConfiguration</a> config, <a href=CompoundStep.html>CompoundStep</a> parent, <a href=../model/HeadModel.html>HeadModel</a> step)</code></th>
                                                 <td class="colLast"></td>
                                             </tr>
                                         
@@ -399,9 +405,9 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         </tr>
                                         
                                         <tr id="i6" class="altColor">
-                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            <td class="colFirst"><code>final <a href=CompoundStep.html>CompoundStep</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> doc) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#getParent()>getParent</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -409,7 +415,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i7" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#output(java.lang.String,com.xmlcalabash.documents.XProcDocument)>output</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> document) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#input(java.lang.String,com.xmlcalabash.documents.XProcDocument)>input</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> doc) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -417,7 +423,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i8" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#close(java.lang.String)>close</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port) </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#output(java.lang.String,com.xmlcalabash.documents.XProcDocument)>output</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port, <a href=../../documents/XProcDocument.html>XProcDocument</a> document) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -425,7 +431,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i9" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#instantiate()>instantiate</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#close(java.lang.String)>close</a>(<a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a> port) </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -433,7 +439,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i10" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#prepare()>prepare</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#instantiate()>instantiate</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -441,7 +447,7 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i11" class="rowColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#run()>run</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#prepare()>prepare</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
@@ -449,12 +455,20 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                         <tr id="i12" class="altColor">
                                             <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
                                             </td>
-                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#reset()>reset</a>() </code>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#run()>run</a>() </code>
                                             </th>
                                             <td class="colLast"></td>
                                         </tr>
                                         
                                         <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#reset()>reset</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i14" class="altColor">
                                             <td class="colFirst"><code><a href=https://docs.oracle.com/javase/8/docs/api/java/lang/String.html>String</a></code>
                                             </td>
                                             <th class="colSecond" scope="row"><code><a href=CompoundStepHead.html#toString()>toString</a>() </code>
@@ -499,11 +513,11 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                             </a>
                                 <h3>Constructor Detail</h3>
                                 
-                                <a name="CompoundStepHead(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.runtime.model.HeadModel)"></a>
+                                <a name="CompoundStepHead(com.xmlcalabash.runtime.XProcStepConfiguration,com.xmlcalabash.runtime.steps.CompoundStep,com.xmlcalabash.runtime.model.HeadModel)"></a>
                                 <ul class="blockList">
                                     <li class="blockList">
                                         <h4>CompoundStepHead</h4>
-                                        <pre>CompoundStepHead(<a href=../XProcStepConfiguration.html>XProcStepConfiguration</a> config, <a href=../model/HeadModel.html>HeadModel</a> step)</pre>
+                                        <pre>CompoundStepHead(<a href=../XProcStepConfiguration.html>XProcStepConfiguration</a> config, <a href=CompoundStep.html>CompoundStep</a> parent, <a href=../model/HeadModel.html>HeadModel</a> step)</pre>
                                         <div class="block"></div>
                                         
                                     </li>
@@ -646,6 +660,29 @@ extends <a href=AbstractStep.html>AbstractStep</a>
                                     <li class="blockList">
                                         <h4>getReadyToRun</h4>
                                         <pre class="methodSignature"> <a href=https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html>Boolean</a> <a href=CompoundStepHead.html#getReadyToRun()>getReadyToRun</a>()</pre>
+                                        <div class="block"></div>
+
+                                        <dl>
+
+                                        
+
+                                        
+
+                                        
+
+                                        </dl>
+                                    </li>
+                                </ul>
+                                
+                                <a id="getParent()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getParent</h4>
+                                        <pre class="methodSignature"> final <a href=CompoundStep.html>CompoundStep</a> <a href=CompoundStepHead.html#getParent()>getParent</a>()</pre>
                                         <div class="block"></div>
 
                                         <dl>

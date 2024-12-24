@@ -20,6 +20,7 @@ $dokka.location:com.xmlcalabash.datamodel/XProcMatchExpression.Companion///Point
 $dokka.location:com.xmlcalabash.datamodel/XProcSelectExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcSelectExpression.Companion.html
 $dokka.location:com.xmlcalabash.datamodel/XProcShortcutExpression.Companion///PointingToDeclaration/com/xmlcalabash/datamodel/XProcShortcutExpression.Companion.html
 $dokka.location:com.xmlcalabash.debugger/CliDebugger.Breakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.Breakpoint.html
+$dokka.location:com.xmlcalabash.debugger/CliDebugger.Catchpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.Catchpoint.html
 $dokka.location:com.xmlcalabash.debugger/CliDebugger.ConditionalBreakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.ConditionalBreakpoint.html
 $dokka.location:com.xmlcalabash.debugger/CliDebugger.DebuggerCommand///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.DebuggerCommand.html
 $dokka.location:com.xmlcalabash.debugger/CliDebugger.InputBreakpoint///PointingToDeclaration/com/xmlcalabash/debugger/CliDebugger.InputBreakpoint.html
@@ -64,7 +65,6 @@ $dokka.location:com.xmlcalabash.parsers/XPath31.Terminal///PointingToDeclaration
 $dokka.location:com.xmlcalabash.parsers/XPath31.TopDownTreeBuilder///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.TopDownTreeBuilder.html
 $dokka.location:com.xmlcalabash.runtime.steps/CompoundStep.Companion///PointingToDeclaration/com/xmlcalabash/runtime/steps/CompoundStep.Companion.html
 $dokka.location:com.xmlcalabash.runtime.steps/RunStep.PassthroughReceiver///PointingToDeclaration/com/xmlcalabash/runtime/steps/RunStep.PassthroughReceiver.html
-$dokka.location:com.xmlcalabash.runtime/XProcPipeline.ReceiverProxy///PointingToDeclaration/com/xmlcalabash/runtime/XProcPipeline.ReceiverProxy.html
 $dokka.location:com.xmlcalabash.spi/AtomicStepServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/AtomicStepServiceProvider.Companion.html
 $dokka.location:com.xmlcalabash.spi/DocumentResolverServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/DocumentResolverServiceProvider.Companion.html
 $dokka.location:com.xmlcalabash.spi/PagedMediaServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/PagedMediaServiceProvider.Companion.html
