@@ -63,6 +63,7 @@ $dokka.location:com.xmlcalabash.parsers/XPath31.ParseException///PointingToDecla
 $dokka.location:com.xmlcalabash.parsers/XPath31.Symbol///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.Symbol.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.Terminal///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.Terminal.html
 $dokka.location:com.xmlcalabash.parsers/XPath31.TopDownTreeBuilder///PointingToDeclaration/com/xmlcalabash/parsers/XPath31.TopDownTreeBuilder.html
+$dokka.location:com.xmlcalabash.runtime.steps/AbstractStep.RunTask///PointingToDeclaration/com/xmlcalabash/runtime/steps/AbstractStep.RunTask.html
 $dokka.location:com.xmlcalabash.runtime.steps/CompoundStep.Companion///PointingToDeclaration/com/xmlcalabash/runtime/steps/CompoundStep.Companion.html
 $dokka.location:com.xmlcalabash.runtime.steps/RunStep.PassthroughReceiver///PointingToDeclaration/com/xmlcalabash/runtime/steps/RunStep.PassthroughReceiver.html
 $dokka.location:com.xmlcalabash.spi/AtomicStepServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/AtomicStepServiceProvider.Companion.html
@@ -85,6 +86,7 @@ $dokka.location:com.xmlcalabash.steps/XsltStep.DocumentCloseAction///PointingToD
 $dokka.location:com.xmlcalabash.steps/XsltStep.DocumentHandler///PointingToDeclaration/com/xmlcalabash/steps/XsltStep.DocumentHandler.html
 $dokka.location:com.xmlcalabash.steps/XsltStep.MyResultDocumentResolver///PointingToDeclaration/com/xmlcalabash/steps/XsltStep.MyResultDocumentResolver.html
 $dokka.location:com.xmlcalabash.steps/XsltStep.SystemIdMapper///PointingToDeclaration/com/xmlcalabash/steps/XsltStep.SystemIdMapper.html
+$dokka.location:com.xmlcalabash.util/BufferingMessageReporter.Message///PointingToDeclaration/com/xmlcalabash/util/BufferingMessageReporter.Message.html
 $dokka.location:com.xmlcalabash.util/HashUtils.Companion///PointingToDeclaration/com/xmlcalabash/util/HashUtils.Companion.html
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyArrayString///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyArrayString.html
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyAttributeImplicitName///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyAttributeImplicitName.html
@@ -114,8 +116,8 @@ $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTaskListItemPlace
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTocOptionsListType///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyTocOptionsListType.html
 $dokka.location:com.xmlcalabash.util/NopPagedMediaProvider.Companion///PointingToDeclaration/com/xmlcalabash/util/NopPagedMediaProvider.Companion.html
 $dokka.location:com.xmlcalabash.util/S9Api.Companion///PointingToDeclaration/com/xmlcalabash/util/S9Api.Companion.html
+$dokka.location:com.xmlcalabash.util/SaxonErrorReporter.Companion///PointingToDeclaration/com/xmlcalabash/util/SaxonErrorReporter.Companion.html
 $dokka.location:com.xmlcalabash.util/SchematronImpl.Companion///PointingToDeclaration/com/xmlcalabash/util/SchematronImpl.Companion.html
-$dokka.location:com.xmlcalabash.util/SchematronImpl.UResourceResolver///PointingToDeclaration/com/xmlcalabash/util/SchematronImpl.UResourceResolver.html
 $dokka.location:com.xmlcalabash.util/UriUtils.Companion///PointingToDeclaration/com/xmlcalabash/util/UriUtils.Companion.html
 $dokka.location:com.xmlcalabash.util/Urify.Companion///PointingToDeclaration/com/xmlcalabash/util/Urify.Companion.html
 $dokka.location:com.xmlcalabash.util/ValueTemplateParser.Companion///PointingToDeclaration/com/xmlcalabash/util/ValueTemplateParser.Companion.html
