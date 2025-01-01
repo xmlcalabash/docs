@@ -1,0 +1,149 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>Chapter 4. Messages and logging</title><link href="./css/pygments.css" rel="stylesheet"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"/><meta name="dc.modified" content="2025-01-01T18:37:53Z"/><meta name="generator" content="DocBook xslTNG version 2.5.0 / 855db8f2 / SAXON HE 12.5"/><link href="./css/docbook-toc.css" rel="stylesheet"/><link href="./css/docbook.css" rel="stylesheet" media="screen"/><link href="img/icon.png" rel="shortcut icon"/><link href="./css/xmlcalabash.css" rel="stylesheet"/><link href="./css/xproc.css" rel="stylesheet"/><link rel="prev" href="graphs.html"/><link rel="next" href="debugging.html"/><link rel="up" href="index.html"/><link rel="home" href="index.html"/><script src="./js/persistent-toc.js" defer="defer"></script><script src="./js/copy-verbatim.js" defer="defer"></script><script src="./js/chunk-nav.js" defer="defer"></script></head><body class="chapter component"><nav class="top"><div><a href="index.html">Home</a> <a href="index.html">Up</a> <a href="debugging.html">Next</a> <a href="graphs.html">Prev</a></div></nav><main><section id="logging" db-chunk="logging.html" db-id="d111e1009" class="chapter component"><header><h2>Chapter <span class="label">4</span><span class="sep">. </span>Messages and logging</h2></header><div class="db-bfs"><p>Messages and logging are frustratingly complex to manage. Java
+provides a flexible and robust set of logging APIs. Production systems
+can leverage that infrastructure in sophisticated ways to control what
+is logged, where, and how. But <em>configuring</em> that
+infrastructure, even <em>learning how</em> to configure
+it, are substantial tasks. They’re far more than a casual user running
+a single application on a local machine is ever likely to
+need.</p><p>XML Calabash tries to offer the best of both worlds. It uses the
+SLF4J logging framework (version 2.0.16) with the “logback
+classic” back end. (Other backends can be used, SLF4J supports the
+full logging ecosystem.) All of the messages that XML Calabash produces are
+sent to the logger.
+If the <code class="option"><a href="running.html#cli-debug">debug</a></code> is used, the logging messages
+are also printed on the console. For more control, see
+<a href="#logback" class="xref xref-section">Section <span class="label">4<span class="sep">.</span>1</span>, “Configuring the logging back end”</a>.</p><p>In front of that back end, XML Calabash has its own “message
+reporter” interface which it ties into the various message listener
+and error listener APIs provided by the APIs it uses. Casual users can set the “verbosity level”
+(via a <a href="configuration.html#cc.xml-calabash" class="link">configuration option</a>
+or on the <a href="running.html#cli-verbosity" class="link">command line</a>) to quickly
+filter the level of detail they’re interested in.</p><p>That leaves only the category of “progress messages” to resolve.
+Often, it’s most convenient to run a pipeline and get its results with
+no concern about what steps ran, or in what order. But for long
+running or complex pipelines, it may be reassuring, especially during
+development, to track the progress of steps in the pipeline.</p><p>XML Calabash provides three “visualizations” for progress:
+silent, plain, and detailed. (Custom visualizations are also
+possible.) The <code class="literal">silent</code> visualizer, as the name
+suggests, prints nothing. That’s the default.</p><p>The <code class="literal">plain</code> visualizer prints the names of
+steps as they are run. It elides some noise, specifically the majority
+of steps introduced when constructing <a href="graphs.html" class="link">the
+graph</a>. The plain output for sample pipeline in the graphs chapter
+looks like this:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim"><code><span class="computeroutput">Running p:declare-step</span>
+<span class="computeroutput">Running . cx:document (../xml/default-input.xml)</span>
+<span class="computeroutput">Running . p:xinclude</span>
+<span class="computeroutput">Running . ex:ident</span>
+<span class="computeroutput">Running .. p:identity</span>
+<span class="computeroutput">Running . p:for-each</span>
+<span class="computeroutput">Running .. p:identity/id1</span>
+<span class="computeroutput">Running .. p:add-attribute/add</span>
+<span class="computeroutput">Running .. p:identity/id1</span>
+<span class="computeroutput">Running .. p:add-attribute/add</span>
+<span class="computeroutput">Running .. p:identity/id1</span>
+<span class="computeroutput">Running .. p:add-attribute/add</span>
+<span class="computeroutput">Running .. p:identity/id1</span>
+<span class="computeroutput">Running .. p:add-attribute/add</span>
+<span class="computeroutput">Running . p:wrap-sequence</span>
+<span class="computeroutput">Running . p:identity/id2</span></code></pre></div><p>The <code class="literal">detail</code> visualizer tracks the progress of
+all steps, both the start and end of compound steps, and can track the documents
+produced by each step along the way. With both step and document reporting enabled,
+its output looks like this:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim"><code><span class="computeroutput">┌─ p:declare-step/declare-step
+│  ├─ cx:head/declare-step_head
+│  ├─ cx:document/document (../xml/default-input.xml)
+│  │  ┄ cx:document/document.result ⟶ &lt;doc ...&gt;
+│  ├─ p:xinclude/xinclude
+│  │  ┄ p:xinclude/xinclude.result ⟶ &lt;doc ...&gt;
+│  ├─ ex:ident/declare-step_2
+│  │  ├─ cx:head/declare-step_2_head
+│  │  │  ┄ cx:head/declare-step_2_head.source ⟶ &lt;doc ...&gt;
+│  │  ├─ p:identity/identity
+│  │  │  ┄ p:identity/identity.result ⟶ &lt;doc ...&gt;
+│  │  │  ┄ cx:foot/declare-step_2_foot.result ⟶ &lt;doc ...&gt;
+│  │  ├─ cx:foot/declare-step_2_foot
+│  ├─ ex:ident/declare-step_2
+│  ├─ cx:select/select_IC511
+│  │  ┄ cx:select/select_IC511.result ⟶ &lt;chap ...&gt;
+│  │  ┄ cx:select/select_IC511.result ⟶ &lt;chap ...&gt;
+│  │  ┄ cx:select/select_IC511.result ⟶ &lt;chap ...&gt;
+│  │  ┄ cx:select/select_IC511.result ⟶ &lt;app ...&gt;
+│  ├─ p:for-each/for-each
+│  │  ├─ cx:head/for-each_head
+│  │  │  ┄ cx:head/for-each_head.current ⟶ &lt;chap ...&gt;
+│  │  ├─ p:identity/id1
+│  │  │  ┄ p:identity/id1.result ⟶ &lt;chap ...&gt;
+│  │  ├─ p:add-attribute/add
+│  │  │  ┄ p:add-attribute/add.result ⟶ &lt;chap ...&gt;
+│  │  │  ┄ cx:foot/for-each_foot.!result ⟶ &lt;chap ...&gt;
+│  │  ├─ cx:foot/for-each_foot
+│  │  ├─ cx:head/for-each_head
+│  │  │  ┄ cx:head/for-each_head.current ⟶ &lt;chap ...&gt;
+│  │  ├─ p:identity/id1
+│  │  │  ┄ p:identity/id1.result ⟶ &lt;chap ...&gt;
+│  │  ├─ p:add-attribute/add
+│  │  │  ┄ p:add-attribute/add.result ⟶ &lt;chap ...&gt;
+│  │  │  ┄ cx:foot/for-each_foot.!result ⟶ &lt;chap ...&gt;
+│  │  ├─ cx:foot/for-each_foot
+│  │  ├─ cx:head/for-each_head
+│  │  │  ┄ cx:head/for-each_head.current ⟶ &lt;chap ...&gt;
+│  │  ├─ p:identity/id1
+│  │  │  ┄ p:identity/id1.result ⟶ &lt;chap ...&gt;
+│  │  ├─ p:add-attribute/add
+│  │  │  ┄ p:add-attribute/add.result ⟶ &lt;chap ...&gt;
+│  │  │  ┄ cx:foot/for-each_foot.!result ⟶ &lt;chap ...&gt;
+│  │  ├─ cx:foot/for-each_foot
+│  │  ├─ cx:head/for-each_head
+│  │  │  ┄ cx:head/for-each_head.current ⟶ &lt;app ...&gt;
+│  │  ├─ p:identity/id1
+│  │  │  ┄ p:identity/id1.result ⟶ &lt;app ...&gt;
+│  │  ├─ p:add-attribute/add
+│  │  │  ┄ p:add-attribute/add.result ⟶ &lt;app ...&gt;
+│  │  │  ┄ cx:foot/for-each_foot.!result ⟶ &lt;app ...&gt;
+│  │  ├─ cx:foot/for-each_foot
+│  ├─ p:for-each/for-each
+│  ├─ p:wrap-sequence/wrap-sequence
+│  │  ┄ p:wrap-sequence/wrap-sequence.result ⟶ &lt;set ...&gt;
+│  ├─ p:identity/id2
+│  │  ┄ p:identity/id2.result ⟶ &lt;set ...&gt;
+│  │  ┄ cx:foot/declare-step_foot.result ⟶ &lt;set ...&gt;
+│  ├─ cx:foot/declare-step_foot
+└─ p:declare-step/declare-step</span></code></pre></div><p>It’s worth noting that the IDs in this output, for example “<code class="literal">select_IC511</code>”,
+are the same IDs that the debugger uses to set breakpoints. If you configure a default
+visualizer in the configuration file, using the <code class="option"><a href="running.html#cli-debugger">--debugger</a></code>
+option will automatically disable it. (But you can force it to be on with the
+<code class="option"><a href="running.html#cli-visualizer">--visualizer</a></code> option, if that’s what you’d prefer.)
+</p></div><section id="logback" class="section"><header><h2>Configuring the logging back end</h2></header><p>XML Calabash uses the “logback classic” backend by default. The configuration
+file that ships with XML Calabash only sends messages to the console and it uses 
+a “turboFilter” to dynamically control the log level.</p><p>If you want to quickly configure XML Calabash to save log messages to a file,
+simply point to a logback configuration that is configured accordingly. For example,
+the configuration in <a href="#logback-file" class="xref xref-figure">Figure <span class="label">4<span class="sep">.</span>1</span>, “Example logback Configuration”</a>.</p><div id="logback-file" class="figure formalobject"><div class="pre-wrap programlisting-wrap highlight" db-startinglinenumber="1" db-numberoflines="28"><pre class="language-xml long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln"> 1 <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;configuration&gt;</span></code></span></span>
+<span class="line" db-line="2"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="3"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">"STDERR"</span> <span class="na">class=</span><span class="s">"ch.qos.logback.core.ConsoleAppender"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="4"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;target&gt;</span>System.err<span class="nt">&lt;/target&gt;</span></code></span></span>
+<span class="line" db-line="5"><span class="ln"> 5 <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;filter</span> <span class="na">class=</span><span class="s">"ch.qos.logback.classic.filter.ThresholdFilter"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="6"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>      <span class="nt">&lt;level&gt;</span>WARN<span class="nt">&lt;/level&gt;</span></code></span></span>
+<span class="line" db-line="7"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;/filter&gt;</span></code></span></span>
+<span class="line" db-line="8"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;encoder&gt;</span></code></span></span>
+<span class="line" db-line="9"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>      <span class="nt">&lt;pattern&gt;</span>%-5level %msg%n<span class="nt">&lt;/pattern&gt;</span></code></span></span>
+<span class="line" db-line="10"><span class="ln">10 <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;/encoder&gt;</span></code></span></span>
+<span class="line" db-line="11"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;/appender&gt;</span></code></span></span>
+<span class="line" db-line="12"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code> </code></span></span>
+<span class="line" db-line="13"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">"FILE"</span> <span class="na">class=</span><span class="s">"ch.qos.logback.core.rolling.RollingFileAppender"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="14"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;file&gt;</span>/tmp/xmlcalabash.log<span class="nt">&lt;/file&gt;</span></code></span></span>
+<span class="line" db-line="15"><span class="ln">15 <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;rollingPolicy</span> <span class="na">class=</span><span class="s">"ch.qos.logback.core.rolling.TimeBasedRollingPolicy"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="16"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>      <span class="nt">&lt;fileNamePattern&gt;</span>/tmp/xmlcalabash.%d{yyyy-MM-dd}.log<span class="nt">&lt;/fileNamePattern&gt;</span></code></span></span>
+<span class="line" db-line="17"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>      <span class="nt">&lt;maxHistory&gt;</span>5<span class="nt">&lt;/maxHistory&gt;</span></code></span></span>
+<span class="line" db-line="18"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;/rollingPolicy&gt;</span></code></span></span>
+<span class="line" db-line="19"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;encoder&gt;</span></code></span></span>
+<span class="line" db-line="20"><span class="ln">20 <span class="nsep">|</span></span><span class="ld"><code>      <span class="nt">&lt;pattern&gt;</span>%d{HH:mm:ss.SSS}  %-4relative [%thread] %-5level %logger{35} - %msg%n<span class="nt">&lt;/pattern&gt;</span></code></span></span>
+<span class="line" db-line="21"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;/encoder&gt;</span></code></span></span>
+<span class="line" db-line="22"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;/appender&gt;</span></code></span></span>
+<span class="line" db-line="23"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  </code></span></span>
+<span class="line" db-line="24"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;root</span> <span class="na">level=</span><span class="s">"TRACE"</span> <span class="na">additivity=</span><span class="s">"false"</span><span class="nt">&gt;</span></code></span></span>
+<span class="line" db-line="25"><span class="ln">25 <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">"STDERR"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="26"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>    <span class="nt">&lt;appender-ref</span> <span class="na">ref=</span><span class="s">"FILE"</span><span class="nt">/&gt;</span></code></span></span>
+<span class="line" db-line="27"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code>  <span class="nt">&lt;/root&gt;</span></code></span></span>
+<span class="line" db-line="28"><span class="ln">   <span class="nsep">|</span></span><span class="ld"><code><span class="nt">&lt;/configuration&gt;</span></code></span></span></pre></div><header><div class="title">Figure <span class="label">4<span class="sep">.</span>1</span><span class="sep">. </span>Example logback Configuration</div></header></div><p>This configuration doesn’t offer dynamic control of the log level. It 
+sends warning and error messages to the console and <em>all</em> messages
+to the log file (<code class="filename">/tmp/xmlcalabash.log</code> in this example).</p><p>One way to tell Java to use this logging configuration instead of the
+default is to specify it with a system property, for example, on the command line:</p><div class="pre-wrap screen-wrap"><pre class="screen verbatim verblines"><span class="line"><span class="ld"><code><span class="prompt">$ </span><span class="userinput">java -Dlogback.configurationFile=/path/logback.xml …</span></code></span></span></pre></div><p>Where <code class="filename">/path/logback.xml</code> is the path to your configuration file
+and “…” is the rest of the Java arguments you want to use.
+</p></section></section></main><nav class="bottom"><table><tr><td class="previous"><a href="graphs.html">Prev</a></td><td class="up"><a href="index.html">Up</a></td><td class="next"><a href="debugging.html">Next</a></td></tr><tr><td class="previous">Chapter <span class="label">3</span><span class="sep">. </span>Pipelines vs. Graphs</td><td class="up"><a href="index.html">Home</a></td><td class="next">Chapter <span class="label">5</span><span class="sep">. </span>The interactive debugger</td></tr></table><nav class="tocopen"></nav><nav class="toc"></nav><!-- Hide ToC details from user agents that don’t support JS --><script type="text/html" class="tocopen"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAABDklEQVQ4je2UUW3EMAyGv0wDUAhlkDBIyuAYXCEclEJoGZRBUgYOgzJoGHgPW6o7rWq35+2TIkWW9duW7N+oKuM46jiOGGMAaNsW5xzee5xzn8EvRESXZUFEWNcVAFWl73v6vjcGUIAYIyEEANZ1RUSY55lSCo/HA4BhGGiahtvthnOOtm0BSCnRdd1eVAGNMeoR27aptVattbpt22FOjFGrzjsX1I7q/4q3y4xf8i/4FwT3Pcw5Y4zBWvujfQMopZBzJuf8XbCeVyWEgHOO+/2+x0SEaZpIKSEih0X2Wz6jdlxKuezaqL7qpZS0lLKbw/M4ANba3RyapiGE8OJGqOrpizGq916999VATvM/AGFn1sxsVjL5AAAAAElFTkSuQmCC" alt="[toc]"/></script><script type="text/html" class="toc"><header><span>Table of Contents</span><span class="close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAtklEQVQ4jaWT0Q3DIAxEz52AEbyB2cDZhBEY3SNcPyqqBEwqpZaQAHNP5jBCEiJCPAiSIgAeiUe8zoveO9x9e9jd0XtfKwHA1hpHtNY49rO8u59zn4mqMiJSyFkcEVTVFQCAtdYFMotrrXN111JnyA/xCsggN2JeXmGEmaGU8l2XUmBm29fZuh0RW2PTK2SGZcamADPb3nmGmNkKOI7j1rAzJG2kcWhqkstQ1QX+/2ciKU/FJOUN6JFZYWpmK3sAAAAASUVORK5CYII=" alt="X"/></span><p class="ptoc-search"><input class="ptoc-search" placeholder="Search" style="width: 80%"/></p></header><div db-persistent-toc="persistent-toc.html" db-prefix="">Loading…</div></script></nav></body></html>
