@@ -70,9 +70,7 @@ $dokka.location:com.xmlcalabash.spi/AtomicStepServiceProvider.Companion///Pointi
 $dokka.location:com.xmlcalabash.spi/DocumentResolverServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/DocumentResolverServiceProvider.Companion.html
 $dokka.location:com.xmlcalabash.spi/PagedMediaServiceProvider.Companion///PointingToDeclaration/com/xmlcalabash/spi/PagedMediaServiceProvider.Companion.html
 $dokka.location:com.xmlcalabash.steps.os/OsExec.ProcessOutputReader///PointingToDeclaration/com/xmlcalabash/steps/os/OsExec.ProcessOutputReader.html
-$dokka.location:com.xmlcalabash.steps.validation/Errors.Companion///PointingToDeclaration/com/xmlcalabash/steps/validation/Errors.Companion.html
 $dokka.location:com.xmlcalabash.steps.validation/ValidateWithDTD.MyErrorReporter///PointingToDeclaration/com/xmlcalabash/steps/validation/ValidateWithDTD.MyErrorReporter.html
-$dokka.location:com.xmlcalabash.steps/ArchiveStep.ZipArchiver///PointingToDeclaration/com/xmlcalabash/steps/ArchiveStep.ZipArchiver.html
 $dokka.location:com.xmlcalabash.steps/CompareStep.CompareReporter///PointingToDeclaration/com/xmlcalabash/steps/CompareStep.CompareReporter.html
 $dokka.location:com.xmlcalabash.steps/CssFormatterStep.Companion///PointingToDeclaration/com/xmlcalabash/steps/CssFormatterStep.Companion.html
 $dokka.location:com.xmlcalabash.steps/UncompressStep.Companion///PointingToDeclaration/com/xmlcalabash/steps/UncompressStep.Companion.html
@@ -116,7 +114,6 @@ $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTaskListItemPlace
 $dokka.location:com.xmlcalabash.util/MarkdownExtensions.DataKeyTocOptionsListType///PointingToDeclaration/com/xmlcalabash/util/MarkdownExtensions.DataKeyTocOptionsListType.html
 $dokka.location:com.xmlcalabash.util/NopPagedMediaProvider.Companion///PointingToDeclaration/com/xmlcalabash/util/NopPagedMediaProvider.Companion.html
 $dokka.location:com.xmlcalabash.util/S9Api.Companion///PointingToDeclaration/com/xmlcalabash/util/S9Api.Companion.html
-$dokka.location:com.xmlcalabash.util/SaxonErrorReporter.Companion///PointingToDeclaration/com/xmlcalabash/util/SaxonErrorReporter.Companion.html
 $dokka.location:com.xmlcalabash.util/SchematronImpl.Companion///PointingToDeclaration/com/xmlcalabash/util/SchematronImpl.Companion.html
 $dokka.location:com.xmlcalabash.util/UriUtils.Companion///PointingToDeclaration/com/xmlcalabash/util/UriUtils.Companion.html
 $dokka.location:com.xmlcalabash.util/Urify.Companion///PointingToDeclaration/com/xmlcalabash/util/Urify.Companion.html
@@ -129,6 +126,27 @@ $dokka.location:com.xmlcalabash.util/XProcCollectionFinder.XProcResource///Point
 $dokka.location:com.xmlcalabash.util/XProcCollectionFinder.XProcResourceCollection///PointingToDeclaration/com/xmlcalabash/util/XProcCollectionFinder.XProcResourceCollection.html
 $dokka.location:com.xmlcalabash.util/XmlViewportComposer.Decomposer///PointingToDeclaration/com/xmlcalabash/util/XmlViewportComposer.Decomposer.html
 $dokka.location:com.xmlcalabash.util/XmlViewportComposer.Recomposer///PointingToDeclaration/com/xmlcalabash/util/XmlViewportComposer.Recomposer.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlCategory.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlCategory.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlContext.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlContext.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlCreator.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlCreator.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlDetection.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlDetection.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlDigest.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlDigest.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlDocument.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlDocument.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlElement.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlElement.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlLet.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlLet.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlLocation.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlLocation.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlMessage.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlMessage.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlMessageElement.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlMessageElement.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlProvenance.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlProvenance.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlReport.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlReport.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlReportMetadata.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlReportMetadata.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlReports.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlReports.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlSchema.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlSchema.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlSummary.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlSummary.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlSupplemental.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlSupplemental.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlTimestamp.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlTimestamp.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlTitle.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlTitle.Companion.html
+$dokka.location:com.xmlcalabash.xvrl/XvrlValidator.Companion///PointingToDeclaration/com/xmlcalabash/xvrl/XvrlValidator.Companion.html
 com.xmlcalabash.api
 com.xmlcalabash.config
 com.xmlcalabash.datamodel
@@ -150,6 +168,7 @@ com.xmlcalabash.runtime.parameters
 com.xmlcalabash.runtime.steps
 com.xmlcalabash.spi
 com.xmlcalabash.steps
+com.xmlcalabash.steps.archives
 com.xmlcalabash.steps.extension
 com.xmlcalabash.steps.file
 com.xmlcalabash.steps.internal
@@ -157,5 +176,7 @@ com.xmlcalabash.steps.os
 com.xmlcalabash.steps.validation
 com.xmlcalabash.tracing
 com.xmlcalabash.util
+com.xmlcalabash.visualizers
 com.xmlcalabash.xslt
+com.xmlcalabash.xvrl
 
